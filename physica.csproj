@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,6 +65,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -75,6 +79,81 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ardo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arri.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arup.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cmpl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\copy.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dist.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\expo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\load.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\past.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poly.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pomi.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pomo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\poro.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cursor.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grmi.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grpl.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grsn.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\grto.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cent.bmp" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

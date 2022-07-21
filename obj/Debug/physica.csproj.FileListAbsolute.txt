@@ -1,0 +1,11 @@
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\physica.exe.config
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\physica.exe
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\physica.pdb
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.AssemblyReference.cache
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.SuggestedBindingRedirects.cache
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.Form1.resources
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.Properties.Resources.resources
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.GenerateResource.cache
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.CoreCompileInputs.cache
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.exe
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.pdb
