@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32516.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "physica", "physica.csproj", "{A92685AC-88DD-4B1E-AAC5-D30043AEDECB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A92685AC-88DD-4B1E-AAC5-D30043AEDECB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92685AC-88DD-4B1E-AAC5-D30043AEDECB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92685AC-88DD-4B1E-AAC5-D30043AEDECB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92685AC-88DD-4B1E-AAC5-D30043AEDECB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A1BA55BD-250A-4ED7-A729-76F9A42139EF}
+	EndGlobalSection
+EndGlobal
