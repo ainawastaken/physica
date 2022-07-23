@@ -8,4 +8,4 @@ C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.GenerateResourc
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.CoreCompileInputs.cache
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.exe
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.pdb
-C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.editorWindow.resources
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.editor.editorWindow.resources

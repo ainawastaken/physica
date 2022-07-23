@@ -1,4 +1,4 @@
-﻿namespace physica
+﻿namespace physica.editor
 {
     partial class editorWindow
     {
@@ -65,17 +65,18 @@
             this.button6 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.canvas = new System.Windows.Forms.Panel();
-            this.offsetPanel = new System.Windows.Forms.Panel();
-            this.centerOffset = new System.Windows.Forms.Button();
-            this.offsetUp = new System.Windows.Forms.Button();
-            this.offsetRight = new System.Windows.Forms.Button();
-            this.offsetDon = new System.Windows.Forms.Button();
-            this.offsetLeft = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.toolStrip2 = new System.Windows.Forms.ToolStrip();
+            this.offsetPanel = new System.Windows.Forms.Panel();
+            this.offsetLeft = new System.Windows.Forms.Button();
+            this.offsetDon = new System.Windows.Forms.Button();
+            this.offsetRight = new System.Windows.Forms.Button();
+            this.offsetUp = new System.Windows.Forms.Button();
+            this.centerOffset = new System.Windows.Forms.Button();
+            this.canvas = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -83,8 +84,8 @@
             this.entitiesBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.canvas.SuspendLayout();
             this.offsetPanel.SuspendLayout();
+            this.canvas.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -429,88 +430,6 @@
             this.tabPage1.Text = "Project";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // canvas
-            // 
-            this.canvas.BackColor = System.Drawing.Color.DarkGray;
-            this.canvas.Controls.Add(this.offsetPanel);
-            this.canvas.Location = new System.Drawing.Point(3, 3);
-            this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(10000, 10000);
-            this.canvas.TabIndex = 0;
-            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
-            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
-            this.canvas.MouseEnter += new System.EventHandler(this.canvas_MouseEnter);
-            this.canvas.MouseLeave += new System.EventHandler(this.canvas_MouseLeave);
-            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
-            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
-            // 
-            // offsetPanel
-            // 
-            this.offsetPanel.BackColor = System.Drawing.Color.Gray;
-            this.offsetPanel.Controls.Add(this.centerOffset);
-            this.offsetPanel.Controls.Add(this.offsetUp);
-            this.offsetPanel.Controls.Add(this.offsetRight);
-            this.offsetPanel.Controls.Add(this.offsetDon);
-            this.offsetPanel.Controls.Add(this.offsetLeft);
-            this.offsetPanel.Location = new System.Drawing.Point(550, 3);
-            this.offsetPanel.Name = "offsetPanel";
-            this.offsetPanel.Size = new System.Drawing.Size(68, 67);
-            this.offsetPanel.TabIndex = 5;
-            // 
-            // centerOffset
-            // 
-            this.centerOffset.BackgroundImage = global::physica.Properties.Resources.cent;
-            this.centerOffset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.centerOffset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.centerOffset.Location = new System.Drawing.Point(25, 24);
-            this.centerOffset.Name = "centerOffset";
-            this.centerOffset.Size = new System.Drawing.Size(18, 18);
-            this.centerOffset.TabIndex = 4;
-            this.centerOffset.UseVisualStyleBackColor = true;
-            // 
-            // offsetUp
-            // 
-            this.offsetUp.BackgroundImage = global::physica.Properties.Resources.arup;
-            this.offsetUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetUp.Location = new System.Drawing.Point(25, 0);
-            this.offsetUp.Name = "offsetUp";
-            this.offsetUp.Size = new System.Drawing.Size(18, 18);
-            this.offsetUp.TabIndex = 0;
-            this.offsetUp.UseVisualStyleBackColor = true;
-            // 
-            // offsetRight
-            // 
-            this.offsetRight.BackgroundImage = global::physica.Properties.Resources.arri;
-            this.offsetRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.offsetRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetRight.Location = new System.Drawing.Point(49, 24);
-            this.offsetRight.Name = "offsetRight";
-            this.offsetRight.Size = new System.Drawing.Size(18, 18);
-            this.offsetRight.TabIndex = 3;
-            this.offsetRight.UseVisualStyleBackColor = true;
-            // 
-            // offsetDon
-            // 
-            this.offsetDon.BackgroundImage = global::physica.Properties.Resources.ardo;
-            this.offsetDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.offsetDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetDon.Location = new System.Drawing.Point(25, 48);
-            this.offsetDon.Name = "offsetDon";
-            this.offsetDon.Size = new System.Drawing.Size(18, 18);
-            this.offsetDon.TabIndex = 1;
-            this.offsetDon.UseVisualStyleBackColor = true;
-            // 
-            // offsetLeft
-            // 
-            this.offsetLeft.BackgroundImage = global::physica.Properties.Resources.arle;
-            this.offsetLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.offsetLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetLeft.Location = new System.Drawing.Point(1, 24);
-            this.offsetLeft.Name = "offsetLeft";
-            this.offsetLeft.Size = new System.Drawing.Size(18, 18);
-            this.offsetLeft.TabIndex = 2;
-            this.offsetLeft.UseVisualStyleBackColor = true;
-            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -540,11 +459,105 @@
             this.timer1.Enabled = true;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // toolStrip2
+            // 
+            this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip2.Location = new System.Drawing.Point(38, 401);
+            this.toolStrip2.Name = "toolStrip2";
+            this.toolStrip2.Size = new System.Drawing.Size(643, 25);
+            this.toolStrip2.TabIndex = 4;
+            this.toolStrip2.Text = "toolStrip2";
+            // 
+            // offsetPanel
+            // 
+            this.offsetPanel.BackColor = System.Drawing.Color.Gray;
+            this.offsetPanel.Controls.Add(this.centerOffset);
+            this.offsetPanel.Controls.Add(this.offsetUp);
+            this.offsetPanel.Controls.Add(this.offsetRight);
+            this.offsetPanel.Controls.Add(this.offsetDon);
+            this.offsetPanel.Controls.Add(this.offsetLeft);
+            this.offsetPanel.Location = new System.Drawing.Point(550, 3);
+            this.offsetPanel.Name = "offsetPanel";
+            this.offsetPanel.Size = new System.Drawing.Size(68, 67);
+            this.offsetPanel.TabIndex = 5;
+            // 
+            // offsetLeft
+            // 
+            this.offsetLeft.BackgroundImage = global::physica.Properties.Resources.arle;
+            this.offsetLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.offsetLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetLeft.Location = new System.Drawing.Point(1, 24);
+            this.offsetLeft.Name = "offsetLeft";
+            this.offsetLeft.Size = new System.Drawing.Size(18, 18);
+            this.offsetLeft.TabIndex = 2;
+            this.offsetLeft.UseVisualStyleBackColor = true;
+            // 
+            // offsetDon
+            // 
+            this.offsetDon.BackgroundImage = global::physica.Properties.Resources.ardo;
+            this.offsetDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.offsetDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetDon.Location = new System.Drawing.Point(25, 48);
+            this.offsetDon.Name = "offsetDon";
+            this.offsetDon.Size = new System.Drawing.Size(18, 18);
+            this.offsetDon.TabIndex = 1;
+            this.offsetDon.UseVisualStyleBackColor = true;
+            // 
+            // offsetRight
+            // 
+            this.offsetRight.BackgroundImage = global::physica.Properties.Resources.arri;
+            this.offsetRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.offsetRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetRight.Location = new System.Drawing.Point(49, 24);
+            this.offsetRight.Name = "offsetRight";
+            this.offsetRight.Size = new System.Drawing.Size(18, 18);
+            this.offsetRight.TabIndex = 3;
+            this.offsetRight.UseVisualStyleBackColor = true;
+            // 
+            // offsetUp
+            // 
+            this.offsetUp.BackgroundImage = global::physica.Properties.Resources.arup;
+            this.offsetUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetUp.Location = new System.Drawing.Point(25, 0);
+            this.offsetUp.Name = "offsetUp";
+            this.offsetUp.Size = new System.Drawing.Size(18, 18);
+            this.offsetUp.TabIndex = 0;
+            this.offsetUp.UseVisualStyleBackColor = true;
+            // 
+            // centerOffset
+            // 
+            this.centerOffset.BackgroundImage = global::physica.Properties.Resources.cent;
+            this.centerOffset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.centerOffset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.centerOffset.Location = new System.Drawing.Point(25, 24);
+            this.centerOffset.Name = "centerOffset";
+            this.centerOffset.Size = new System.Drawing.Size(18, 18);
+            this.centerOffset.TabIndex = 4;
+            this.centerOffset.UseVisualStyleBackColor = true;
+            // 
+            // canvas
+            // 
+            this.canvas.BackColor = System.Drawing.Color.Silver;
+            this.canvas.Controls.Add(this.offsetPanel);
+            this.canvas.Location = new System.Drawing.Point(3, 3);
+            this.canvas.Name = "canvas";
+            this.canvas.Size = new System.Drawing.Size(10000, 10000);
+            this.canvas.TabIndex = 0;
+            this.canvas.Click += new System.EventHandler(this.canvas_Click);
+            this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
+            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            this.canvas.MouseEnter += new System.EventHandler(this.canvas_MouseEnter);
+            this.canvas.MouseLeave += new System.EventHandler(this.canvas_MouseLeave);
+            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
+            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
+            // 
             // editorWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(836, 426);
+            this.Controls.Add(this.toolStrip2);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
@@ -565,8 +578,8 @@
             this.entitiesBox.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            this.canvas.ResumeLayout(false);
             this.offsetPanel.ResumeLayout(false);
+            this.canvas.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -592,12 +605,6 @@
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Panel canvas;
-        private System.Windows.Forms.Button centerOffset;
-        private System.Windows.Forms.Button offsetRight;
-        private System.Windows.Forms.Button offsetLeft;
-        private System.Windows.Forms.Button offsetDon;
-        private System.Windows.Forms.Button offsetUp;
         private System.Windows.Forms.GroupBox entitiesBox;
         private System.Windows.Forms.ListBox listBox1;
         private System.Windows.Forms.Button button6;
@@ -618,8 +625,15 @@
         private System.Windows.Forms.ToolStripMenuItem propertiesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem optionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
-        private System.Windows.Forms.Panel offsetPanel;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ToolStrip toolStrip2;
+        private System.Windows.Forms.Panel canvas;
+        private System.Windows.Forms.Panel offsetPanel;
+        private System.Windows.Forms.Button centerOffset;
+        private System.Windows.Forms.Button offsetUp;
+        private System.Windows.Forms.Button offsetRight;
+        private System.Windows.Forms.Button offsetDon;
+        private System.Windows.Forms.Button offsetLeft;
     }
 }
 

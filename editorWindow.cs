@@ -3,18 +3,23 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Drawing2D;
 using System.Linq;
 using System.Text;
+using physica.engine;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace physica
+namespace physica.editor
 {
     public partial class editorWindow : Form
     {
         bool mouseOnCanvas = false;
         PointF mouseLocation;
+        PointF mouseStart;
+        int sellectedTool = 0;
+        bool mouseDown;
 
         public editorWindow()
         {
@@ -44,10 +49,13 @@ namespace physica
 
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
+            e.Graphics.SmoothingMode = SmoothingMode.AntiAlias;
             if (mouseOnCanvas)
             {
                 e.Graphics.DrawLine(Pens.Black, mouseLocation.X - 5, mouseLocation.Y, mouseLocation.X + 5, mouseLocation.Y);
                 e.Graphics.DrawLine(Pens.Black, mouseLocation.X, mouseLocation.Y - 5, mouseLocation.X, mouseLocation.Y + 5);
+
+                physicaEngine.Tools.DrawTool(e,mouseLocation,mouseStart,mouseDown,0);
             }
         }
 
@@ -72,18 +80,29 @@ namespace physica
 
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseDown = true;
+            }
+            mouseStart = e.Location;
         }
 
         private void canvas_MouseUp(object sender, MouseEventArgs e)
         {
-
+            if (e.Button == MouseButtons.Left)
+            {
+                mouseDown = false;
+            }
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
             canvas.Refresh();
             GC.Collect();
+        }
+
+        private void canvas_Click(object sender, EventArgs e)
+        {
         }
     }
 }
