@@ -35,9 +35,7 @@ namespace physica.engine
                         SizeF size = new SizeF(mousePos.X - mouseStart.X, mousePos.Y - mouseStart.Y);
                         RectangleF rect = new RectangleF(mouseStart, size);
 
-                        e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect));
-
-                        size = new SizeF(-2, 2);
+                        e.Graphics.DrawRectangle(Pens.Blue, Rectangle.Round(rect));
                     }
                 }
             }

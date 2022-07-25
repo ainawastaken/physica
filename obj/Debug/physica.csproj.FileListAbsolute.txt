@@ -9,3 +9,6 @@ C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.CoreCompileInpu
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.exe
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.pdb
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.editor.editorWindow.resources
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.CopyComplete
