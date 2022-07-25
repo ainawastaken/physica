@@ -32,12 +32,14 @@ namespace physica.engine
 
                     if (mouseDown)
                     {
-                        SizeF size = new SizeF(mousePos.X - mouseStart.X, mousePos.Y - mouseStart.Y);
-                        RectangleF rect = new RectangleF(mouseStart, size);
+                        SizeF size = new SizeF(0, 10);
+                        RectangleF rect = new RectangleF(mousePos, size);
+                        e.Graphics.DrawRectangle(Pens.Red, Rectangle.Round(rect));
 
+                        size = new SizeF(Math.Abs(mousePos.X - mouseStart.X), Math.Abs(mousePos.Y - mouseStart.Y));
+                        rect = new RectangleF(mouseStart, size);
                         e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect));
 
-                        size = new SizeF(-2, 2);
                     }
                 }
             }
