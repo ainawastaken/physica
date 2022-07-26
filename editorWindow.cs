@@ -25,7 +25,9 @@ namespace physica.editor
         int sellectedTool = 0;
         bool mouseDown;
 
-        PointF[] gridPoints = new PointF[1048576];
+        Point canvasOffset;
+
+        PointF[] gridPoints;
         PointF closestPoint;
 
         int gridMul = 32;
@@ -44,7 +46,6 @@ namespace physica.editor
         {
             while (true)
             {
-                CalculateGrid(ref gridPoints);
                 if (gridSnapEnable)
                 {
                     closestPoint = CalculateClosestPoint(mouseLocation, gridPoints);
@@ -64,15 +65,8 @@ namespace physica.editor
             {
                 for (int y = 0; y < canvas.Height; y+=gridMul)
                 {
-                    try
-                    {
-                        gridVar[i] = new PointF(x, y);
-                        i++;
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message, i.ToString());
-                    }
+                    gridVar[i] = new PointF(x, y);
+                    i++;
                 }
             }
         }
@@ -89,6 +83,7 @@ namespace physica.editor
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            gridPoints = new PointF[canvas.Width*canvas.Height];
             var property = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             property.SetValue(canvas, true, null);
             CalculateGrid(ref gridPoints);
@@ -159,6 +154,7 @@ namespace physica.editor
         {
             mouseLocation = e.Location;
             canvas.Refresh();
+            locationLabel.Text = $"Location: {trueMouseLocation.X},{trueMouseLocation.Y}";
         }
 
         private void canvas_MouseDown(object sender, MouseEventArgs e)

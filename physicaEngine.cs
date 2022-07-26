@@ -40,7 +40,35 @@ namespace physica.engine
                         rect = new RectangleF(mouseStart, size);
                         e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect));
 
+                        e.Graphics.DrawString($"{rect.Width}", SystemFonts.DefaultFont, Brushes.Black, new PointF((rect.Size.Width/2)+rect.X, rect.Y));
+                        e.Graphics.DrawString($"{rect.Height}", SystemFonts.DefaultFont, Brushes.Black, new PointF(rect.X, (rect.Size.Height/2)+rect.Y));
+                        e.Graphics.DrawString($"Area:{rect.Width*rect.Height}", SystemFonts.DefaultFont, Brushes.Black, new PointF(rect.X, rect.Y-15));
                     }
+                }
+            }
+        }
+
+        public class Objects
+        {
+            public class StaticHitbox
+            {
+                PointF location;
+                RectangleF hitBox;
+                PointF centroid;
+
+                public StaticHitbox create(PointF pos, RectangleF rect)
+                {
+                    StaticHitbox obj = new StaticHitbox();
+                    obj.location = pos;
+                    obj.hitBox = rect;
+                    obj.centroid = new PointF(rect.Left + rect.Width / 2,rect.Top + rect.Height / 2);
+                    return obj;
+                }
+                public StaticHitbox move(PointF pos, StaticHitbox obj)
+                {
+                    obj.location = pos;
+                    obj.centroid = new PointF(obj.hitBox.Left + obj.hitBox.Width / 2, obj.hitBox.Top + obj.hitBox.Height / 2);
+                    return obj;
                 }
             }
         }

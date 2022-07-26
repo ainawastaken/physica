@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(editorWindow));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openProjBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.newProjBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.saveProjBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsPrjBtn = new System.Windows.Forms.ToolStripMenuItem();
@@ -72,13 +73,19 @@
             this.offsetRight = new System.Windows.Forms.Button();
             this.offsetDon = new System.Windows.Forms.Button();
             this.offsetLeft = new System.Windows.Forms.Button();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
-            this.openProjBtn = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.offsetLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.locationLabel = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,6 +95,7 @@
             this.tabPage1.SuspendLayout();
             this.canvas.SuspendLayout();
             this.offsetPanel.SuspendLayout();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -114,34 +122,40 @@
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
+            // openProjBtn
+            // 
+            this.openProjBtn.Name = "openProjBtn";
+            this.openProjBtn.Size = new System.Drawing.Size(112, 22);
+            this.openProjBtn.Text = "Open";
+            // 
             // newProjBtn
             // 
             this.newProjBtn.Name = "newProjBtn";
-            this.newProjBtn.Size = new System.Drawing.Size(180, 22);
+            this.newProjBtn.Size = new System.Drawing.Size(112, 22);
             this.newProjBtn.Text = "New";
             // 
             // saveProjBtn
             // 
             this.saveProjBtn.Name = "saveProjBtn";
-            this.saveProjBtn.Size = new System.Drawing.Size(180, 22);
+            this.saveProjBtn.Size = new System.Drawing.Size(112, 22);
             this.saveProjBtn.Text = "Save";
             // 
             // saveAsPrjBtn
             // 
             this.saveAsPrjBtn.Name = "saveAsPrjBtn";
-            this.saveAsPrjBtn.Size = new System.Drawing.Size(180, 22);
+            this.saveAsPrjBtn.Size = new System.Drawing.Size(112, 22);
             this.saveAsPrjBtn.Text = "Save as";
             // 
             // ClosePrjBtn
             // 
             this.ClosePrjBtn.Name = "ClosePrjBtn";
-            this.ClosePrjBtn.Size = new System.Drawing.Size(180, 22);
+            this.ClosePrjBtn.Size = new System.Drawing.Size(112, 22);
             this.ClosePrjBtn.Text = "Close";
             // 
             // exitButton
             // 
             this.exitButton.Name = "exitButton";
-            this.exitButton.Size = new System.Drawing.Size(180, 22);
+            this.exitButton.Size = new System.Drawing.Size(112, 22);
             this.exitButton.Text = "Exit";
             // 
             // mapToolStripMenuItem
@@ -159,25 +173,25 @@
             // mapPropertiesBtn
             // 
             this.mapPropertiesBtn.Name = "mapPropertiesBtn";
-            this.mapPropertiesBtn.Size = new System.Drawing.Size(180, 22);
+            this.mapPropertiesBtn.Size = new System.Drawing.Size(154, 22);
             this.mapPropertiesBtn.Text = "Map properties";
             // 
             // propertiesBtn
             // 
             this.propertiesBtn.Name = "propertiesBtn";
-            this.propertiesBtn.Size = new System.Drawing.Size(180, 22);
+            this.propertiesBtn.Size = new System.Drawing.Size(154, 22);
             this.propertiesBtn.Text = "Properties";
             // 
             // optionsBtn
             // 
             this.optionsBtn.Name = "optionsBtn";
-            this.optionsBtn.Size = new System.Drawing.Size(180, 22);
+            this.optionsBtn.Size = new System.Drawing.Size(154, 22);
             this.optionsBtn.Text = "Options";
             // 
             // helpBtn
             // 
             this.helpBtn.Name = "helpBtn";
-            this.helpBtn.Size = new System.Drawing.Size(180, 22);
+            this.helpBtn.Size = new System.Drawing.Size(154, 22);
             this.helpBtn.Text = "Help";
             // 
             // toolStrip1
@@ -454,7 +468,7 @@
             this.canvas.Controls.Add(this.offsetPanel);
             this.canvas.Location = new System.Drawing.Point(3, 3);
             this.canvas.Name = "canvas";
-            this.canvas.Size = new System.Drawing.Size(1024, 1024);
+            this.canvas.Size = new System.Drawing.Size(2048, 2048);
             this.canvas.TabIndex = 0;
             this.canvas.Click += new System.EventHandler(this.canvas_Click);
             this.canvas.Paint += new System.Windows.Forms.PaintEventHandler(this.canvas_Paint);
@@ -531,12 +545,21 @@
             this.offsetLeft.TabIndex = 2;
             this.offsetLeft.UseVisualStyleBackColor = true;
             // 
+            // tabPage4
+            // 
+            this.tabPage4.Location = new System.Drawing.Point(4, 22);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(627, 345);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Map Overview";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
             // tabPage2
             // 
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(627, 373);
+            this.tabPage2.Size = new System.Drawing.Size(627, 345);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Polygon editor";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -545,7 +568,7 @@
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(627, 373);
+            this.tabPage3.Size = new System.Drawing.Size(627, 345);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Properties";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -565,33 +588,60 @@
             this.toolStrip2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.toolStrip2.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
             this.toolStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripLabel1,
+            this.offsetLabel,
             this.toolStripSeparator3,
-            this.toolStripLabel2,
+            this.locationLabel,
             this.toolStripSeparator4,
             this.toolStripLabel3,
             this.toolStripSeparator5,
-            this.toolStripButton11});
+            this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(38, 401);
             this.toolStrip2.Name = "toolStrip2";
             this.toolStrip2.Size = new System.Drawing.Size(643, 25);
             this.toolStrip2.TabIndex = 4;
             this.toolStrip2.Text = "toolStrip2";
             // 
-            // openProjBtn
+            // offsetLabel
             // 
-            this.openProjBtn.Name = "openProjBtn";
-            this.openProjBtn.Size = new System.Drawing.Size(180, 22);
-            this.openProjBtn.Text = "Open";
+            this.offsetLabel.Name = "offsetLabel";
+            this.offsetLabel.Size = new System.Drawing.Size(60, 22);
+            this.offsetLabel.Text = "Offset: 0,0";
             // 
-            // tabPage4
+            // toolStripSeparator3
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(627, 373);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Map Overview";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // locationLabel
+            // 
+            this.locationLabel.Name = "locationLabel";
+            this.locationLabel.Size = new System.Drawing.Size(74, 22);
+            this.locationLabel.Text = "Location: 0,0";
+            // 
+            // toolStripLabel3
+            // 
+            this.toolStripLabel3.Name = "toolStripLabel3";
+            this.toolStripLabel3.Size = new System.Drawing.Size(86, 22);
+            this.toolStripLabel3.Text = "toolStripLabel3";
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::physica.Properties.Resources.cog;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
+            this.toolStripButton1.Text = "toolStripButton1";
             // 
             // editorWindow
             // 
@@ -622,6 +672,8 @@
             this.tabPage1.ResumeLayout(false);
             this.canvas.ResumeLayout(false);
             this.offsetPanel.ResumeLayout(false);
+            this.toolStrip2.ResumeLayout(false);
+            this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -678,6 +730,13 @@
         private System.Windows.Forms.Button offsetLeft;
         private System.Windows.Forms.ToolStripMenuItem openProjBtn;
         private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.ToolStripLabel offsetLabel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripLabel locationLabel;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }
 
