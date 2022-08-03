@@ -12,3 +12,6 @@ C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.editor.editorWindow.re
 C:\Users\erikl\Documents\GitHub\physica\bin\Debug\System.Numerics.Vectors.dll
 C:\Users\erikl\Documents\GitHub\physica\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.csproj.CopyComplete
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\OpenCL.Net.dll
+C:\Users\erikl\Documents\GitHub\physica\obj\Debug\physica.console.Console.resources
+C:\Users\erikl\Documents\GitHub\physica\bin\Debug\Resources\gridFinder.cl

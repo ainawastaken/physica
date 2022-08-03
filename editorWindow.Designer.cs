@@ -65,7 +65,7 @@
             this.entityList = new System.Windows.Forms.ListBox();
             this.createEntity = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.projectTabPage = new System.Windows.Forms.TabPage();
             this.canvas = new System.Windows.Forms.Panel();
             this.offsetPanel = new System.Windows.Forms.Panel();
             this.centerOffset = new System.Windows.Forms.Button();
@@ -73,17 +73,45 @@
             this.offsetRight = new System.Windows.Forms.Button();
             this.offsetDon = new System.Windows.Forms.Button();
             this.offsetLeft = new System.Windows.Forms.Button();
-            this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.mapOverviewTabPage = new System.Windows.Forms.TabPage();
+            this.polyEditorTabPage = new System.Windows.Forms.TabPage();
+            this.polyCanvas = new System.Windows.Forms.Panel();
+            this.offsetPanel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.hidePanel1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.button12 = new System.Windows.Forms.Button();
+            this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.button11 = new System.Windows.Forms.Button();
+            this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.radioButton3 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.propertiesTabPage = new System.Windows.Forms.TabPage();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.toolStrip2 = new System.Windows.Forms.ToolStrip();
             this.offsetLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.locationLabel = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripLabel3 = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.gridMulLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.menuStrip1.SuspendLayout();
@@ -92,9 +120,21 @@
             this.placedEntitiesBox.SuspendLayout();
             this.entitiesBox.SuspendLayout();
             this.tabControl1.SuspendLayout();
-            this.tabPage1.SuspendLayout();
+            this.projectTabPage.SuspendLayout();
             this.canvas.SuspendLayout();
             this.offsetPanel.SuspendLayout();
+            this.polyEditorTabPage.SuspendLayout();
+            this.polyCanvas.SuspendLayout();
+            this.offsetPanel2.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -168,7 +208,6 @@
             this.mapToolStripMenuItem.Name = "mapToolStripMenuItem";
             this.mapToolStripMenuItem.Size = new System.Drawing.Size(46, 20);
             this.mapToolStripMenuItem.Text = "Tools";
-            this.mapToolStripMenuItem.Click += new System.EventHandler(this.mapToolStripMenuItem_Click);
             // 
             // mapPropertiesBtn
             // 
@@ -229,6 +268,7 @@
             this.sellectTool1.Size = new System.Drawing.Size(36, 36);
             this.sellectTool1.Text = "toolStripButton1";
             this.sellectTool1.ToolTipText = "Sellection tool";
+            this.sellectTool1.Click += new System.EventHandler(this.sellectTool1_Click);
             // 
             // editTool
             // 
@@ -252,6 +292,7 @@
             this.distanceTool1.Text = "tok";
             this.distanceTool1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.distanceTool1.ToolTipText = "Distance tool";
+            this.distanceTool1.Click += new System.EventHandler(this.distanceTool1_Click);
             // 
             // polygonTool1
             // 
@@ -441,26 +482,26 @@
             this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabPage1);
-            this.tabControl1.Controls.Add(this.tabPage4);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.projectTabPage);
+            this.tabControl1.Controls.Add(this.mapOverviewTabPage);
+            this.tabControl1.Controls.Add(this.polyEditorTabPage);
+            this.tabControl1.Controls.Add(this.propertiesTabPage);
             this.tabControl1.Location = new System.Drawing.Point(40, 27);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(635, 371);
             this.tabControl1.TabIndex = 3;
             // 
-            // tabPage1
+            // projectTabPage
             // 
-            this.tabPage1.Controls.Add(this.canvas);
-            this.tabPage1.Location = new System.Drawing.Point(4, 22);
-            this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(627, 345);
-            this.tabPage1.TabIndex = 0;
-            this.tabPage1.Text = "Project";
-            this.tabPage1.UseVisualStyleBackColor = true;
+            this.projectTabPage.Controls.Add(this.canvas);
+            this.projectTabPage.Location = new System.Drawing.Point(4, 22);
+            this.projectTabPage.Name = "projectTabPage";
+            this.projectTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.projectTabPage.Size = new System.Drawing.Size(627, 345);
+            this.projectTabPage.TabIndex = 0;
+            this.projectTabPage.Text = "Project";
+            this.projectTabPage.UseVisualStyleBackColor = true;
             // 
             // canvas
             // 
@@ -545,33 +586,331 @@
             this.offsetLeft.TabIndex = 2;
             this.offsetLeft.UseVisualStyleBackColor = true;
             // 
-            // tabPage4
+            // mapOverviewTabPage
             // 
-            this.tabPage4.Location = new System.Drawing.Point(4, 22);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(627, 345);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Map Overview";
-            this.tabPage4.UseVisualStyleBackColor = true;
+            this.mapOverviewTabPage.Location = new System.Drawing.Point(4, 22);
+            this.mapOverviewTabPage.Name = "mapOverviewTabPage";
+            this.mapOverviewTabPage.Size = new System.Drawing.Size(627, 345);
+            this.mapOverviewTabPage.TabIndex = 3;
+            this.mapOverviewTabPage.Text = "Map Overview";
+            this.mapOverviewTabPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage2
+            // polyEditorTabPage
             // 
-            this.tabPage2.Location = new System.Drawing.Point(4, 22);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(627, 345);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Polygon editor";
-            this.tabPage2.UseVisualStyleBackColor = true;
+            this.polyEditorTabPage.Controls.Add(this.polyCanvas);
+            this.polyEditorTabPage.Controls.Add(this.panel2);
+            this.polyEditorTabPage.Location = new System.Drawing.Point(4, 22);
+            this.polyEditorTabPage.Name = "polyEditorTabPage";
+            this.polyEditorTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.polyEditorTabPage.Size = new System.Drawing.Size(627, 345);
+            this.polyEditorTabPage.TabIndex = 1;
+            this.polyEditorTabPage.Text = "Polygon editor";
+            this.polyEditorTabPage.UseVisualStyleBackColor = true;
             // 
-            // tabPage3
+            // polyCanvas
             // 
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(627, 345);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Properties";
-            this.tabPage3.UseVisualStyleBackColor = true;
+            this.polyCanvas.BackColor = System.Drawing.Color.Silver;
+            this.polyCanvas.Controls.Add(this.offsetPanel2);
+            this.polyCanvas.Controls.Add(this.hidePanel1);
+            this.polyCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.polyCanvas.Location = new System.Drawing.Point(3, 3);
+            this.polyCanvas.Name = "polyCanvas";
+            this.polyCanvas.Size = new System.Drawing.Size(471, 339);
+            this.polyCanvas.TabIndex = 1;
+            // 
+            // offsetPanel2
+            // 
+            this.offsetPanel2.BackColor = System.Drawing.Color.Gray;
+            this.offsetPanel2.Controls.Add(this.button2);
+            this.offsetPanel2.Controls.Add(this.button3);
+            this.offsetPanel2.Controls.Add(this.button4);
+            this.offsetPanel2.Controls.Add(this.button5);
+            this.offsetPanel2.Controls.Add(this.button6);
+            this.offsetPanel2.Location = new System.Drawing.Point(397, 27);
+            this.offsetPanel2.Name = "offsetPanel2";
+            this.offsetPanel2.Size = new System.Drawing.Size(68, 67);
+            this.offsetPanel2.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::physica.Properties.Resources.cent;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(25, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(18, 18);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::physica.Properties.Resources.arup;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(25, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(18, 18);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = global::physica.Properties.Resources.arri;
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(49, 24);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(18, 18);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::physica.Properties.Resources.ardo;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(25, 48);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(18, 18);
+            this.button5.TabIndex = 1;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = global::physica.Properties.Resources.arle;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(1, 24);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(18, 18);
+            this.button6.TabIndex = 2;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // hidePanel1
+            // 
+            this.hidePanel1.BackColor = System.Drawing.Color.DarkGray;
+            this.hidePanel1.BackgroundImage = global::physica.Properties.Resources.arri;
+            this.hidePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.hidePanel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hidePanel1.Location = new System.Drawing.Point(447, 3);
+            this.hidePanel1.Name = "hidePanel1";
+            this.hidePanel1.Size = new System.Drawing.Size(18, 18);
+            this.hidePanel1.TabIndex = 0;
+            this.hidePanel1.UseVisualStyleBackColor = false;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.DarkGray;
+            this.panel2.Controls.Add(this.listBox1);
+            this.panel2.Controls.Add(this.numericUpDown8);
+            this.panel2.Controls.Add(this.button12);
+            this.panel2.Controls.Add(this.numericUpDown7);
+            this.panel2.Controls.Add(this.button11);
+            this.panel2.Controls.Add(this.numericUpDown6);
+            this.panel2.Controls.Add(this.numericUpDown5);
+            this.panel2.Controls.Add(this.button10);
+            this.panel2.Controls.Add(this.button9);
+            this.panel2.Controls.Add(this.button8);
+            this.panel2.Controls.Add(this.button7);
+            this.panel2.Controls.Add(this.numericUpDown4);
+            this.panel2.Controls.Add(this.numericUpDown3);
+            this.panel2.Controls.Add(this.numericUpDown2);
+            this.panel2.Controls.Add(this.numericUpDown1);
+            this.panel2.Controls.Add(this.radioButton4);
+            this.panel2.Controls.Add(this.radioButton3);
+            this.panel2.Controls.Add(this.radioButton2);
+            this.panel2.Controls.Add(this.radioButton1);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel2.Location = new System.Drawing.Point(474, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(150, 339);
+            this.panel2.TabIndex = 0;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(3, 184);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(144, 147);
+            this.listBox1.TabIndex = 17;
+            // 
+            // numericUpDown8
+            // 
+            this.numericUpDown8.Location = new System.Drawing.Point(90, 157);
+            this.numericUpDown8.Name = "numericUpDown8";
+            this.numericUpDown8.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown8.TabIndex = 16;
+            // 
+            // button12
+            // 
+            this.button12.BackgroundImage = global::physica.Properties.Resources.cent;
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Location = new System.Drawing.Point(3, 157);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(20, 20);
+            this.button12.TabIndex = 15;
+            this.button12.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown7
+            // 
+            this.numericUpDown7.Location = new System.Drawing.Point(27, 157);
+            this.numericUpDown7.Name = "numericUpDown7";
+            this.numericUpDown7.Size = new System.Drawing.Size(57, 20);
+            this.numericUpDown7.TabIndex = 14;
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = global::physica.Properties.Resources.cent;
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Location = new System.Drawing.Point(3, 131);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(20, 20);
+            this.button11.TabIndex = 5;
+            this.button11.UseVisualStyleBackColor = true;
+            // 
+            // numericUpDown6
+            // 
+            this.numericUpDown6.Location = new System.Drawing.Point(112, 4);
+            this.numericUpDown6.Name = "numericUpDown6";
+            this.numericUpDown6.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown6.TabIndex = 13;
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(29, 131);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(118, 20);
+            this.numericUpDown5.TabIndex = 12;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Gray;
+            this.button10.BackgroundImage = global::physica.Properties.Resources.poro;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(121, 101);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(26, 26);
+            this.button10.TabIndex = 11;
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Gray;
+            this.button9.BackgroundImage = global::physica.Properties.Resources.pomo;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(89, 101);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(26, 26);
+            this.button9.TabIndex = 10;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Gray;
+            this.button8.BackgroundImage = global::physica.Properties.Resources.pomi;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(35, 99);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(26, 26);
+            this.button8.TabIndex = 9;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Gray;
+            this.button7.BackgroundImage = global::physica.Properties.Resources.popl;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(3, 99);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(26, 26);
+            this.button7.TabIndex = 8;
+            this.button7.UseVisualStyleBackColor = false;
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(57, 75);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(90, 20);
+            this.numericUpDown4.TabIndex = 7;
+            // 
+            // numericUpDown3
+            // 
+            this.numericUpDown3.Location = new System.Drawing.Point(67, 51);
+            this.numericUpDown3.Name = "numericUpDown3";
+            this.numericUpDown3.Size = new System.Drawing.Size(80, 20);
+            this.numericUpDown3.TabIndex = 6;
+            // 
+            // numericUpDown2
+            // 
+            this.numericUpDown2.Location = new System.Drawing.Point(74, 27);
+            this.numericUpDown2.Name = "numericUpDown2";
+            this.numericUpDown2.Size = new System.Drawing.Size(73, 20);
+            this.numericUpDown2.TabIndex = 5;
+            // 
+            // numericUpDown1
+            // 
+            this.numericUpDown1.Location = new System.Drawing.Point(68, 4);
+            this.numericUpDown1.Name = "numericUpDown1";
+            this.numericUpDown1.Size = new System.Drawing.Size(38, 20);
+            this.numericUpDown1.TabIndex = 4;
+            // 
+            // radioButton4
+            // 
+            this.radioButton4.AutoSize = true;
+            this.radioButton4.Location = new System.Drawing.Point(3, 74);
+            this.radioButton4.Name = "radioButton4";
+            this.radioButton4.Size = new System.Drawing.Size(48, 17);
+            this.radioButton4.TabIndex = 3;
+            this.radioButton4.TabStop = true;
+            this.radioButton4.Text = "Drag";
+            this.radioButton4.UseVisualStyleBackColor = true;
+            // 
+            // radioButton3
+            // 
+            this.radioButton3.AutoSize = true;
+            this.radioButton3.Location = new System.Drawing.Point(3, 50);
+            this.radioButton3.Name = "radioButton3";
+            this.radioButton3.Size = new System.Drawing.Size(58, 17);
+            this.radioButton3.TabIndex = 2;
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Gravity";
+            this.radioButton3.UseVisualStyleBackColor = true;
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(3, 27);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(65, 17);
+            this.radioButton2.TabIndex = 1;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Wheight";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(3, 4);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(62, 17);
+            this.radioButton1.TabIndex = 0;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Position";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            // 
+            // propertiesTabPage
+            // 
+            this.propertiesTabPage.Location = new System.Drawing.Point(4, 22);
+            this.propertiesTabPage.Name = "propertiesTabPage";
+            this.propertiesTabPage.Size = new System.Drawing.Size(627, 345);
+            this.propertiesTabPage.TabIndex = 2;
+            this.propertiesTabPage.Text = "Properties";
+            this.propertiesTabPage.UseVisualStyleBackColor = true;
             // 
             // toolTip1
             // 
@@ -592,7 +931,7 @@
             this.toolStripSeparator3,
             this.locationLabel,
             this.toolStripSeparator4,
-            this.toolStripLabel3,
+            this.gridMulLabel,
             this.toolStripSeparator5,
             this.toolStripButton1});
             this.toolStrip2.Location = new System.Drawing.Point(38, 401);
@@ -618,16 +957,16 @@
             this.locationLabel.Size = new System.Drawing.Size(74, 22);
             this.locationLabel.Text = "Location: 0,0";
             // 
-            // toolStripLabel3
-            // 
-            this.toolStripLabel3.Name = "toolStripLabel3";
-            this.toolStripLabel3.Size = new System.Drawing.Size(86, 22);
-            this.toolStripLabel3.Text = "toolStripLabel3";
-            // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
             this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // gridMulLabel
+            // 
+            this.gridMulLabel.Name = "gridMulLabel";
+            this.gridMulLabel.Size = new System.Drawing.Size(101, 22);
+            this.gridMulLabel.Text = "Grid multiplier: 32";
             // 
             // toolStripSeparator5
             // 
@@ -669,9 +1008,22 @@
             this.placedEntitiesBox.ResumeLayout(false);
             this.entitiesBox.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
-            this.tabPage1.ResumeLayout(false);
+            this.projectTabPage.ResumeLayout(false);
             this.canvas.ResumeLayout(false);
             this.offsetPanel.ResumeLayout(false);
+            this.polyEditorTabPage.ResumeLayout(false);
+            this.polyCanvas.ResumeLayout(false);
+            this.offsetPanel2.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
             this.ResumeLayout(false);
@@ -697,12 +1049,12 @@
         private System.Windows.Forms.ToolStripButton gridSnapToggle1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage projectTabPage;
+        private System.Windows.Forms.TabPage polyEditorTabPage;
         private System.Windows.Forms.GroupBox entitiesBox;
         private System.Windows.Forms.ListBox entityList;
         private System.Windows.Forms.Button createEntity;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage propertiesTabPage;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.GroupBox placedEntitiesBox;
         private System.Windows.Forms.Button markEnt1;
@@ -729,14 +1081,44 @@
         private System.Windows.Forms.Button offsetDon;
         private System.Windows.Forms.Button offsetLeft;
         private System.Windows.Forms.ToolStripMenuItem openProjBtn;
-        private System.Windows.Forms.TabPage tabPage4;
+        private System.Windows.Forms.TabPage mapOverviewTabPage;
         private System.Windows.Forms.ToolStripLabel offsetLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripLabel locationLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
-        private System.Windows.Forms.ToolStripLabel toolStripLabel3;
+        private System.Windows.Forms.ToolStripLabel gridMulLabel;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel polyCanvas;
+        private System.Windows.Forms.Button hidePanel1;
+        private System.Windows.Forms.Panel offsetPanel2;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton radioButton3;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown3;
+        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.NumericUpDown numericUpDown8;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.NumericUpDown numericUpDown7;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.NumericUpDown numericUpDown6;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+
+        
     }
 }
 

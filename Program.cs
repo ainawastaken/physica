@@ -12,12 +12,24 @@ namespace physica
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// 
+        public static console.Console c;
         [STAThread]
+
+        
+
         static void Main()
         {
             Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new editorWindow());
+            Application.SetCompatibleTextRenderingDefault(true);
+            editorWindow w = new editorWindow();
+            if (Environment.GetCommandLineArgs().Length >= 2 & Environment.GetCommandLineArgs()[1] == "-dev")
+            {
+                c = new console.Console();
+                c.print(string.Join(", ", Environment.GetCommandLineArgs()));
+                c.Show();
+            }
+            Application.Run(w);
         }
     }
 }
