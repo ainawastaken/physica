@@ -146,6 +146,7 @@
             this.ClientSize = new System.Drawing.Size(484, 461);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.richTextBox1);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Name = "Console";
             this.Text = "console";

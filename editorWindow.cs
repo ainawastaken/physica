@@ -16,6 +16,7 @@ using System.Reflection;
 using OpenCL.Net.Extensions;
 using OpenCL.Net;
 using System.IO;
+using physica.projWind;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -102,6 +103,8 @@ namespace physica.editor
             var property = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             property.SetValue(canvas, true, null);
             CalculateGrid(ref gridPoints);
+
+            
 
             Stopwatch sw = new Stopwatch();
             string progr = File.ReadAllText(@"Resources\gridFinder.cl");
@@ -239,11 +242,6 @@ namespace physica.editor
         private void timer1_Tick(object sender, EventArgs e)
         {
             canvas.Refresh();
-            if (!consIsShown)
-            {
-                ///Program.c.Show();
-                consIsShown = true;
-            }
         }
 
         private void canvas_Click(object sender, EventArgs e)
@@ -254,14 +252,14 @@ namespace physica.editor
 
         private void gridMultiplierPlus_Click(object sender, EventArgs e)
         {
-            gridMul += gridMul*2;
+            gridMul = gridMul*2;
             gridMulLabel.Text = $"Grid multiplier: {gridMul}";
             CalculateGrid(ref gridPoints);
         }
 
         private void gridMultiplierMin_Click(object sender, EventArgs e)
         {
-            gridMul -= gridMul / 2;
+            gridMul = gridMul / 2;
             gridMulLabel.Text = $"Grid multiplier: {gridMul}";
             CalculateGrid(ref gridPoints);
         }
@@ -289,6 +287,20 @@ namespace physica.editor
         private void sellectTool1_Click(object sender, EventArgs e)
         {
             sellectedTool = physicaEngine.Tools.SellectTool;
+        }
+
+        private void newProjBtn_Click(object sender, EventArgs e)
+        {
+            projWind.projWind pw = new projWind.projWind();
+            pw.tabControl12.SelectTab(1);
+            pw.ShowDialog();
+        }
+
+        private void openProjBtn_Click(object sender, EventArgs e)
+        {
+            projWind.projWind pw = new projWind.projWind();
+            pw.tabControl12.SelectTab(0);
+            pw.ShowDialog();
         }
     }
 }

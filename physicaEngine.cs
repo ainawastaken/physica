@@ -2,18 +2,79 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Drawing;
+using System.IO;
 using System.Text;
+using physica;
 using System.Windows.Forms;
 using System.Numerics;
 using System.Threading.Tasks;
+using MoonSharp;
 
 namespace physica.engine
 {
     public class physicaEngine
     {
+        public class Project
+        {
+            public string name;
+            public string path;
+
+            public bool projectIsOpen;
+
+            public List<string> ObjectPaths = new List<string>();
+
+            public void newProj(string _name, string _path)
+            {
+                Program.c.print($"Creating project at path: {_path}\nWith name: {_name}");
+                try
+                {
+                    string a;
+                    if (_path[_path.Length - 1] == @"\".ToCharArray()[0]) { a = ""; } // gay
+                    else { a = @"\"; }
+
+                    Directory.CreateDirectory(_path);
+                    File.Create($"{_path}{a}{_name}Prj.pap").Dispose();
+                    Directory.CreateDirectory($"{_path}{a}Objects");
+                }
+                catch (Exception ex)
+                {
+                    Program.c.print($"\nError creating project with error:\n{ex.HResult}\n{ex.Message}\n{ex.HelpLink}\n");
+                    return;
+                }
+            }
+
+            public void addStaticHitBox(Objects.StaticHitbox obj)
+            {
+                if (projectIsOpen)
+                {
+                    List<string> lines = new List<string>();
+                    lines.Add(obj.fg.ToString());
+                    lines.Add(obj.bg.ToString());
+                    lines.Add(obj.visible.ToString());
+                    lines.Add(obj.solidity.ToString());
+                    lines.Add(obj.hitBox.ToString());
+                    lines.Add(obj.location.ToString());
+                    File.CreateText(Path.Combine(path, $@"Objects\{obj.name}@STHB.txt")).Dispose();
+                    File.WriteAllLines(Path.Combine(path, $@"Objects\{obj.name}@STHB.txt"),lines.ToArray());
+                    ObjectPaths.Add($@"Objects\{obj.name}@STHB.txt");
+                    Program.c.print($"StaticHitBox created at {Path.Combine(path, $@"Objects\{obj.name}@STHB.txt")}");
+                }
+                else { Program.c.print("No project opened, couldnt create StaticHitBox"); };
+            }
+
+            public void closeProject()
+            {
+                projectIsOpen = false;
+            }
+
+            public void openProject(string path)
+            {
+
+            }
+        }
+
         public class Tools
         {
-            
             public static int SellectTool = 0;
             public static int EditTool = 1;
             public static int DistanceTool = 2;
@@ -54,6 +115,7 @@ namespace physica.engine
                     if (mouseDown)
                     {
                         double distance = 0;
+                        double angle = 0;
                         e.Graphics.DrawLine(Pens.Red, mousePos, mouseStart);
 
                         SizeF size = new SizeF(0, -5);
@@ -64,8 +126,9 @@ namespace physica.engine
                         e.Graphics.DrawLine(Pens.Black, PointF.Subtract(mouseStart, size), PointF.Subtract(mouseStart, size2));
 
                         distance = Math.Round(EMath.DistanceBetweenPointFs(mousePos, mouseStart),1);
-                        PointF pnt = EMath.midpoint(mouseStart,mousePos);
-                        e.Graphics.DrawString($"Distance:{distance}", SystemFonts.DefaultFont, Brushes.DarkRed, pnt);
+                        angle = Math.Round(EMath.AngleBetweenPointFs(mousePos, mouseStart), 1);
+                        e.Graphics.DrawString($"Distance:{distance}", SystemFonts.DefaultFont, Brushes.DarkRed, PointF.Empty);
+                        e.Graphics.DrawString($"Angle:{angle}", SystemFonts.DefaultFont, Brushes.DarkRed, new PointF(0,15));
 
                         e.Graphics.DrawString($"X:{mouseStart.X} Y:{mouseStart.Y}", SystemFonts.DefaultFont, Brushes.DarkRed,mouseStart);
                         size = new SizeF(0, -10);
@@ -77,24 +140,110 @@ namespace physica.engine
 
         public class Objects
         {
-            public class StaticHitbox
+            public class Polygon
             {
-                PointF location;
-                RectangleF hitBox;
+                PointF pos;
+                PointF[] points;
                 PointF centroid;
 
-                public StaticHitbox create(PointF pos, RectangleF rect)
+                bool visible;
+                bool useClr;
+                Color fg;
+                Color bg;
+
+                public Polygon create(PointF pos, PointF[] points)
+                {
+                    Polygon obj = new Polygon();
+                    obj.points = points;
+                    obj.pos = pos;
+                    obj.centroid = EMath.Centroid(points);
+
+                    return obj;
+                }
+            }
+            public class ValuePolygon
+            {
+                public PointF pos;
+                public PointF[] points;
+                public PointF centroid;
+                public dynamic[] values;
+
+
+                public bool visible;
+                public bool useClr;
+                public Color fg;
+                public Color bg;
+
+                public ValuePolygon create(PointF pos, PointF[] points)
+                {
+                    ValuePolygon obj = new ValuePolygon();
+                    obj.points = points;
+                    obj.pos = pos;
+                    obj.centroid = EMath.Centroid(points);
+                    obj.values = new dynamic[points.Length];
+
+                    return obj;
+                }
+
+                public ValuePolygon setValues(ValuePolygon obj, dynamic[] values)
+                {
+                    obj.values = values;
+
+                    return obj;
+                }
+                public ValuePolygon setValue(ValuePolygon obj, dynamic value, int index)
+                {
+                    obj.values[index] = value;
+
+                    return obj;
+                }
+            }
+
+            public class StaticHitbox
+            {
+                public PointF location;
+                public RectangleF hitBox;
+                public PointF centroid;
+
+                public bool solidity;
+                public string name;
+
+                public bool visible;
+                public Color fg;
+                public Color bg;
+                
+                public StaticHitbox create(PointF pos, RectangleF rect, string name)
                 {
                     StaticHitbox obj = new StaticHitbox();
                     obj.location = pos;
                     obj.hitBox = rect;
+                    obj.name = name;
                     obj.centroid = new PointF(rect.Left + rect.Width / 2,rect.Top + rect.Height / 2);
                     return obj;
                 }
                 public StaticHitbox move(PointF pos, StaticHitbox obj)
                 {
                     obj.location = pos;
+                    obj.hitBox.Location = pos;
                     obj.centroid = new PointF(obj.hitBox.Left + obj.hitBox.Width / 2, obj.hitBox.Top + obj.hitBox.Height / 2);
+                    return obj;
+                }
+                public StaticHitbox changeProperty(StaticHitbox obj, bool vis = true, bool sol = true, Color fg = new Color(), Color bg = new Color())
+                {
+                    if (fg == new Color())
+                    {
+                        fg = Color.Black;
+                    }
+                    if (bg == new Color())
+                    {
+                        bg = Color.HotPink;
+                    }
+
+                    obj.fg = fg;
+                    obj.bg = bg;
+                    obj.visible = vis;
+                    obj.solidity = sol;
+
                     return obj;
                 }
             }
@@ -191,22 +340,15 @@ namespace physica.engine
                 {
                     iter = distances.ToList().IndexOf(lowestDistance);
                 }
-
-
+                
                 return iter;
             }
 
             public static PointF[] ChangePosition(PointF pos, double rot, PointF[] ply)
             {
                 PointF center;
-                List<Vector2> v2Points = new List<Vector2>();
-                foreach (PointF p in ply)
-                {
-                    v2Points.Add(new Vector2(p.X, p.Y));
-                }
-                PointF point = ToPoint(Centroid(v2Points));
+                PointF point = Centroid(ply);
                 center = point;
-
 
                 int i = 0;
                 foreach (PointF p in ply)
@@ -216,12 +358,8 @@ namespace physica.engine
                     ply[i] = new PointF(ply[i].X + pos.X, ply[i].Y + pos.Y);
                     i++;
                 }
-                v2Points = new List<Vector2>();
-                foreach (PointF p in ply)
-                {
-                    v2Points.Add(new Vector2(p.X, p.Y));
-                }
-                point = ToPoint(Centroid(v2Points));
+
+                point = Centroid(ply);
                 center = point;
                 ply = RotatePolygon(ply, center, rot);
 
@@ -280,12 +418,19 @@ namespace physica.engine
                 return Math.Sqrt((Math.Pow(Math.Abs(x1 - x2), 2) + Math.Pow(Math.Abs(y1 - y2), 2)));
             }
 
-            public static Vector2 Centroid(List<Vector2> path)
+            public static PointF Centroid(PointF[] points)
             {
+                List<Vector2> path = new List<Vector2>();
+                foreach (PointF point in points)
+                {
+                    path.Add(new Vector2(point.X, point.Y));
+                }
+
                 Vector2 result = path.Aggregate(Vector2.Zero, (current, point) => current + point);
                 result /= path.Count;
+                PointF result2 = ToPoint(result);
 
-                return result;
+                return result2;
             }
 
             public static bool IsWithinCircle(PointF circleCenter, PointF circleOuter, PointF coordinate)
