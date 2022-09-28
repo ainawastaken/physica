@@ -31,11 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl12 = new System.Windows.Forms.TabControl();
             this.openProjectTab = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.newProjectTab = new System.Windows.Forms.TabPage();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
@@ -44,9 +41,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.tabControl12.SuspendLayout();
             this.openProjectTab.SuspendLayout();
             this.newProjectTab.SuspendLayout();
@@ -80,28 +81,6 @@
             this.openProjectTab.Text = "Open project";
             this.openProjectTab.UseVisualStyleBackColor = true;
             // 
-            // button3
-            // 
-            this.button3.BackgroundImage = global::physica.Properties.Resources.load;
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(259, 115);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(32, 32);
-            this.button3.TabIndex = 5;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = global::physica.Properties.Resources.relo;
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(259, 65);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(32, 32);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
             // listBox1
             // 
             this.listBox1.FormattingEnabled = true;
@@ -120,26 +99,15 @@
             this.textBox1.TabIndex = 2;
             this.textBox1.WordWrap = false;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::physica.Properties.Resources.folder;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button1.Location = new System.Drawing.Point(6, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(32, 32);
-            this.button1.TabIndex = 1;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // newProjectTab
             // 
+            this.newProjectTab.Controls.Add(this.progressBar1);
             this.newProjectTab.Controls.Add(this.button5);
             this.newProjectTab.Controls.Add(this.textBox3);
-            this.newProjectTab.Controls.Add(this.button4);
             this.newProjectTab.Controls.Add(this.label4);
             this.newProjectTab.Controls.Add(this.textBox2);
             this.newProjectTab.Controls.Add(this.label3);
+            this.newProjectTab.Controls.Add(this.button4);
             this.newProjectTab.Location = new System.Drawing.Point(4, 22);
             this.newProjectTab.Name = "newProjectTab";
             this.newProjectTab.Padding = new System.Windows.Forms.Padding(3);
@@ -191,6 +159,58 @@
             this.label4.TabIndex = 2;
             this.label4.Text = "Path:";
             // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(44, 61);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(247, 20);
+            this.textBox3.TabIndex = 4;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = global::physica.Properties.Resources.load;
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(259, 115);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(32, 32);
+            this.button3.TabIndex = 5;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = global::physica.Properties.Resources.relo;
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(259, 65);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(32, 32);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = global::physica.Properties.Resources.folder;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button1.Location = new System.Drawing.Point(6, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(32, 32);
+            this.button1.TabIndex = 1;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = global::physica.Properties.Resources._new;
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(6, 87);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(64, 64);
+            this.button5.TabIndex = 5;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.BackgroundImage = global::physica.Properties.Resources.folder;
@@ -202,22 +222,12 @@
             this.button4.TabIndex = 3;
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // progressBar1
             // 
-            this.textBox3.Location = new System.Drawing.Point(44, 61);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(247, 20);
-            this.textBox3.TabIndex = 4;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = global::physica.Properties.Resources._new;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(6, 87);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(64, 64);
-            this.button5.TabIndex = 5;
-            this.button5.UseVisualStyleBackColor = true;
+            this.progressBar1.Location = new System.Drawing.Point(76, 87);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(215, 64);
+            this.progressBar1.TabIndex = 6;
             // 
             // projWind
             // 
@@ -258,5 +268,6 @@
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.ProgressBar progressBar1;
     }
 }

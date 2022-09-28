@@ -34,8 +34,6 @@ namespace physica.editor
         int sellectedTool = 0;
         bool mouseDown;
 
-        bool consIsShown = false;
-
         Point canvasOffset;
 
         PointF[] gridPoints;
@@ -223,6 +221,14 @@ namespace physica.editor
             if (e.Button == MouseButtons.Left)
             {
                 mouseDown = true;
+                if (sellectedTool == physicaEngine.Tools.ObjectTool)
+                {
+                    objectSellect1.Location = e.Location;
+                    objectSellect1.Visible = true;
+                    objectSellect1.Select();
+                    objectSellect1.Focus();
+                    objectSellect1.DroppedDown = true;
+                }
             }
             trueMouseStart = e.Location;
             if (gridSnapEnable)
@@ -301,6 +307,11 @@ namespace physica.editor
             projWind.projWind pw = new projWind.projWind();
             pw.tabControl12.SelectTab(0);
             pw.ShowDialog();
+        }
+
+        private void createObjBtn_Click(object sender, EventArgs e)
+        {
+            sellectedTool = physicaEngine.Tools.ObjectTool;
         }
     }
 }

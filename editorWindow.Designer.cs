@@ -44,8 +44,19 @@
             this.optionsBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.helpBtn = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
+            this.sellectTool1 = new System.Windows.Forms.ToolStripButton();
+            this.editTool = new System.Windows.Forms.ToolStripButton();
+            this.distanceTool1 = new System.Windows.Forms.ToolStripButton();
+            this.polygonTool1 = new System.Windows.Forms.ToolStripButton();
+            this.createObjBtn = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.copySellection1 = new System.Windows.Forms.ToolStripButton();
+            this.pasteBtn1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.gridMultiplierPlus = new System.Windows.Forms.ToolStripButton();
+            this.gridMultiplierMin = new System.Windows.Forms.ToolStripButton();
+            this.gridToggle1 = new System.Windows.Forms.ToolStripButton();
+            this.gridSnapToggle1 = new System.Windows.Forms.ToolStripButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.placedEntitiesBox = new System.Windows.Forms.GroupBox();
             this.markEnt1 = new System.Windows.Forms.Button();
@@ -58,16 +69,33 @@
             this.projectTabPage = new System.Windows.Forms.TabPage();
             this.canvas = new System.Windows.Forms.Panel();
             this.offsetPanel = new System.Windows.Forms.Panel();
+            this.centerOffset = new System.Windows.Forms.Button();
+            this.offsetUp = new System.Windows.Forms.Button();
+            this.offsetRight = new System.Windows.Forms.Button();
+            this.offsetDon = new System.Windows.Forms.Button();
+            this.offsetLeft = new System.Windows.Forms.Button();
             this.mapOverviewTabPage = new System.Windows.Forms.TabPage();
             this.polyEditorTabPage = new System.Windows.Forms.TabPage();
             this.polyCanvas = new System.Windows.Forms.Panel();
             this.offsetPanel2 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.hidePanel1 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.numericUpDown8 = new System.Windows.Forms.NumericUpDown();
+            this.button12 = new System.Windows.Forms.Button();
             this.numericUpDown7 = new System.Windows.Forms.NumericUpDown();
+            this.button11 = new System.Windows.Forms.Button();
             this.numericUpDown6 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
@@ -78,6 +106,9 @@
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.propertiesTabPage = new System.Windows.Forms.TabPage();
             this.scriptTabPage = new System.Windows.Forms.TabPage();
+            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
+            this.documentMap1 = new FastColoredTextBoxNS.DocumentMap();
+            this.scriptBox = new FastColoredTextBoxNS.FastColoredTextBox();
             this.scriptTree = new System.Windows.Forms.TreeView();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
@@ -88,38 +119,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.gridMulLabel = new System.Windows.Forms.ToolStripLabel();
             this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.scriptBox = new FastColoredTextBoxNS.FastColoredTextBox();
-            this.documentMap1 = new FastColoredTextBoxNS.DocumentMap();
-            this.toolStrip3 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.centerOffset = new System.Windows.Forms.Button();
-            this.offsetUp = new System.Windows.Forms.Button();
-            this.offsetRight = new System.Windows.Forms.Button();
-            this.offsetDon = new System.Windows.Forms.Button();
-            this.offsetLeft = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.hidePanel1 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.sellectTool1 = new System.Windows.Forms.ToolStripButton();
-            this.editTool = new System.Windows.Forms.ToolStripButton();
-            this.distanceTool1 = new System.Windows.Forms.ToolStripButton();
-            this.polygonTool1 = new System.Windows.Forms.ToolStripButton();
-            this.createObjBtn = new System.Windows.Forms.ToolStripButton();
-            this.copySellection1 = new System.Windows.Forms.ToolStripButton();
-            this.pasteBtn1 = new System.Windows.Forms.ToolStripButton();
-            this.gridMultiplierPlus = new System.Windows.Forms.ToolStripButton();
-            this.gridMultiplierMin = new System.Windows.Forms.ToolStripButton();
-            this.gridToggle1 = new System.Windows.Forms.ToolStripButton();
-            this.gridSnapToggle1 = new System.Windows.Forms.ToolStripButton();
+            this.objectSellect1 = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -142,8 +143,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.scriptTabPage.SuspendLayout();
-            this.toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.scriptBox)).BeginInit();
+            this.toolStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -269,15 +270,142 @@
             this.toolStrip1.TabIndex = 1;
             this.toolStrip1.Text = "toolStrip1";
             // 
+            // sellectTool1
+            // 
+            this.sellectTool1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.sellectTool1.Image = ((System.Drawing.Image)(resources.GetObject("sellectTool1.Image")));
+            this.sellectTool1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.sellectTool1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.sellectTool1.Name = "sellectTool1";
+            this.sellectTool1.Size = new System.Drawing.Size(36, 36);
+            this.sellectTool1.Text = "toolStripButton1";
+            this.sellectTool1.ToolTipText = "Sellection tool";
+            this.sellectTool1.Click += new System.EventHandler(this.sellectTool1_Click);
+            // 
+            // editTool
+            // 
+            this.editTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.editTool.Image = ((System.Drawing.Image)(resources.GetObject("editTool.Image")));
+            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.editTool.Name = "editTool";
+            this.editTool.Size = new System.Drawing.Size(36, 36);
+            this.editTool.Text = "toolStripButton2";
+            this.editTool.ToolTipText = "Edit tool";
+            // 
+            // distanceTool1
+            // 
+            this.distanceTool1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.distanceTool1.Image = ((System.Drawing.Image)(resources.GetObject("distanceTool1.Image")));
+            this.distanceTool1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.distanceTool1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.distanceTool1.Name = "distanceTool1";
+            this.distanceTool1.Size = new System.Drawing.Size(36, 36);
+            this.distanceTool1.Text = "tok";
+            this.distanceTool1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
+            this.distanceTool1.ToolTipText = "Distance tool";
+            this.distanceTool1.Click += new System.EventHandler(this.distanceTool1_Click);
+            // 
+            // polygonTool1
+            // 
+            this.polygonTool1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.polygonTool1.Image = ((System.Drawing.Image)(resources.GetObject("polygonTool1.Image")));
+            this.polygonTool1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.polygonTool1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.polygonTool1.Name = "polygonTool1";
+            this.polygonTool1.Size = new System.Drawing.Size(36, 36);
+            this.polygonTool1.Text = "toolStripButton4";
+            this.polygonTool1.ToolTipText = "Polygon tool";
+            // 
+            // createObjBtn
+            // 
+            this.createObjBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.createObjBtn.Image = global::physica.Properties.Resources.crea;
+            this.createObjBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.createObjBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.createObjBtn.Name = "createObjBtn";
+            this.createObjBtn.Size = new System.Drawing.Size(36, 36);
+            this.createObjBtn.ToolTipText = "Create object";
+            this.createObjBtn.Click += new System.EventHandler(this.createObjBtn_Click);
+            // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
             this.toolStripSeparator1.Size = new System.Drawing.Size(36, 6);
             // 
+            // copySellection1
+            // 
+            this.copySellection1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.copySellection1.Image = ((System.Drawing.Image)(resources.GetObject("copySellection1.Image")));
+            this.copySellection1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.copySellection1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.copySellection1.Name = "copySellection1";
+            this.copySellection1.Size = new System.Drawing.Size(36, 36);
+            this.copySellection1.Text = "toolStripButton5";
+            this.copySellection1.ToolTipText = "Copy sellection";
+            // 
+            // pasteBtn1
+            // 
+            this.pasteBtn1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.pasteBtn1.Image = ((System.Drawing.Image)(resources.GetObject("pasteBtn1.Image")));
+            this.pasteBtn1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.pasteBtn1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.pasteBtn1.Name = "pasteBtn1";
+            this.pasteBtn1.Size = new System.Drawing.Size(36, 36);
+            this.pasteBtn1.Text = "toolStripButton6";
+            this.pasteBtn1.ToolTipText = "Paste from clipboard";
+            // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
             this.toolStripSeparator2.Size = new System.Drawing.Size(36, 6);
+            // 
+            // gridMultiplierPlus
+            // 
+            this.gridMultiplierPlus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.gridMultiplierPlus.Image = ((System.Drawing.Image)(resources.GetObject("gridMultiplierPlus.Image")));
+            this.gridMultiplierPlus.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gridMultiplierPlus.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.gridMultiplierPlus.Name = "gridMultiplierPlus";
+            this.gridMultiplierPlus.Size = new System.Drawing.Size(36, 36);
+            this.gridMultiplierPlus.Text = "toolStripButton7";
+            this.gridMultiplierPlus.ToolTipText = "Grid multiplier +";
+            this.gridMultiplierPlus.Click += new System.EventHandler(this.gridMultiplierPlus_Click);
+            // 
+            // gridMultiplierMin
+            // 
+            this.gridMultiplierMin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.gridMultiplierMin.Image = ((System.Drawing.Image)(resources.GetObject("gridMultiplierMin.Image")));
+            this.gridMultiplierMin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gridMultiplierMin.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.gridMultiplierMin.Name = "gridMultiplierMin";
+            this.gridMultiplierMin.Size = new System.Drawing.Size(36, 36);
+            this.gridMultiplierMin.ToolTipText = "Grid mltiplier -";
+            this.gridMultiplierMin.Click += new System.EventHandler(this.gridMultiplierMin_Click);
+            // 
+            // gridToggle1
+            // 
+            this.gridToggle1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.gridToggle1.Image = ((System.Drawing.Image)(resources.GetObject("gridToggle1.Image")));
+            this.gridToggle1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gridToggle1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.gridToggle1.Name = "gridToggle1";
+            this.gridToggle1.Size = new System.Drawing.Size(36, 36);
+            this.gridToggle1.Text = "toolStripButton9";
+            this.gridToggle1.ToolTipText = "Grid toggle";
+            this.gridToggle1.Click += new System.EventHandler(this.gridToggle1_Click);
+            // 
+            // gridSnapToggle1
+            // 
+            this.gridSnapToggle1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.gridSnapToggle1.Image = ((System.Drawing.Image)(resources.GetObject("gridSnapToggle1.Image")));
+            this.gridSnapToggle1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
+            this.gridSnapToggle1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.gridSnapToggle1.Name = "gridSnapToggle1";
+            this.gridSnapToggle1.Size = new System.Drawing.Size(36, 36);
+            this.gridSnapToggle1.Text = "toolStripButton10";
+            this.gridSnapToggle1.ToolTipText = "Grid snap toggle";
+            this.gridSnapToggle1.Click += new System.EventHandler(this.gridSnapToggle1_Click);
             // 
             // panel1
             // 
@@ -402,6 +530,7 @@
             // canvas
             // 
             this.canvas.BackColor = System.Drawing.Color.Silver;
+            this.canvas.Controls.Add(this.objectSellect1);
             this.canvas.Controls.Add(this.offsetPanel);
             this.canvas.Location = new System.Drawing.Point(3, 3);
             this.canvas.Name = "canvas";
@@ -428,11 +557,65 @@
             this.offsetPanel.Size = new System.Drawing.Size(68, 67);
             this.offsetPanel.TabIndex = 5;
             // 
+            // centerOffset
+            // 
+            this.centerOffset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("centerOffset.BackgroundImage")));
+            this.centerOffset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.centerOffset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.centerOffset.Location = new System.Drawing.Point(25, 24);
+            this.centerOffset.Name = "centerOffset";
+            this.centerOffset.Size = new System.Drawing.Size(18, 18);
+            this.centerOffset.TabIndex = 4;
+            this.centerOffset.UseVisualStyleBackColor = true;
+            // 
+            // offsetUp
+            // 
+            this.offsetUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetUp.BackgroundImage")));
+            this.offsetUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetUp.Location = new System.Drawing.Point(25, 0);
+            this.offsetUp.Name = "offsetUp";
+            this.offsetUp.Size = new System.Drawing.Size(18, 18);
+            this.offsetUp.TabIndex = 0;
+            this.offsetUp.UseVisualStyleBackColor = true;
+            // 
+            // offsetRight
+            // 
+            this.offsetRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetRight.BackgroundImage")));
+            this.offsetRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.offsetRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetRight.Location = new System.Drawing.Point(49, 24);
+            this.offsetRight.Name = "offsetRight";
+            this.offsetRight.Size = new System.Drawing.Size(18, 18);
+            this.offsetRight.TabIndex = 3;
+            this.offsetRight.UseVisualStyleBackColor = true;
+            // 
+            // offsetDon
+            // 
+            this.offsetDon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetDon.BackgroundImage")));
+            this.offsetDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.offsetDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetDon.Location = new System.Drawing.Point(25, 48);
+            this.offsetDon.Name = "offsetDon";
+            this.offsetDon.Size = new System.Drawing.Size(18, 18);
+            this.offsetDon.TabIndex = 1;
+            this.offsetDon.UseVisualStyleBackColor = true;
+            // 
+            // offsetLeft
+            // 
+            this.offsetLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetLeft.BackgroundImage")));
+            this.offsetLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.offsetLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.offsetLeft.Location = new System.Drawing.Point(1, 24);
+            this.offsetLeft.Name = "offsetLeft";
+            this.offsetLeft.Size = new System.Drawing.Size(18, 18);
+            this.offsetLeft.TabIndex = 2;
+            this.offsetLeft.UseVisualStyleBackColor = true;
+            // 
             // mapOverviewTabPage
             // 
             this.mapOverviewTabPage.Location = new System.Drawing.Point(4, 22);
             this.mapOverviewTabPage.Name = "mapOverviewTabPage";
-            this.mapOverviewTabPage.Size = new System.Drawing.Size(627, 389);
+            this.mapOverviewTabPage.Size = new System.Drawing.Size(627, 384);
             this.mapOverviewTabPage.TabIndex = 3;
             this.mapOverviewTabPage.Text = "Map Overview";
             this.mapOverviewTabPage.UseVisualStyleBackColor = true;
@@ -444,7 +627,7 @@
             this.polyEditorTabPage.Location = new System.Drawing.Point(4, 22);
             this.polyEditorTabPage.Name = "polyEditorTabPage";
             this.polyEditorTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.polyEditorTabPage.Size = new System.Drawing.Size(627, 389);
+            this.polyEditorTabPage.Size = new System.Drawing.Size(627, 384);
             this.polyEditorTabPage.TabIndex = 1;
             this.polyEditorTabPage.Text = "Polygon editor";
             this.polyEditorTabPage.UseVisualStyleBackColor = true;
@@ -457,7 +640,7 @@
             this.polyCanvas.Dock = System.Windows.Forms.DockStyle.Fill;
             this.polyCanvas.Location = new System.Drawing.Point(3, 3);
             this.polyCanvas.Name = "polyCanvas";
-            this.polyCanvas.Size = new System.Drawing.Size(471, 383);
+            this.polyCanvas.Size = new System.Drawing.Size(471, 378);
             this.polyCanvas.TabIndex = 1;
             // 
             // offsetPanel2
@@ -472,6 +655,72 @@
             this.offsetPanel2.Name = "offsetPanel2";
             this.offsetPanel2.Size = new System.Drawing.Size(68, 67);
             this.offsetPanel2.TabIndex = 6;
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Location = new System.Drawing.Point(25, 24);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(18, 18);
+            this.button2.TabIndex = 4;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(25, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(18, 18);
+            this.button3.TabIndex = 0;
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Location = new System.Drawing.Point(49, 24);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(18, 18);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Location = new System.Drawing.Point(25, 48);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(18, 18);
+            this.button5.TabIndex = 1;
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Location = new System.Drawing.Point(1, 24);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(18, 18);
+            this.button6.TabIndex = 2;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // hidePanel1
+            // 
+            this.hidePanel1.BackColor = System.Drawing.Color.DarkGray;
+            this.hidePanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hidePanel1.BackgroundImage")));
+            this.hidePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.hidePanel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.hidePanel1.Location = new System.Drawing.Point(447, 3);
+            this.hidePanel1.Name = "hidePanel1";
+            this.hidePanel1.Size = new System.Drawing.Size(18, 18);
+            this.hidePanel1.TabIndex = 0;
+            this.hidePanel1.UseVisualStyleBackColor = false;
             // 
             // panel2
             // 
@@ -498,7 +747,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel2.Location = new System.Drawing.Point(474, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(150, 383);
+            this.panel2.Size = new System.Drawing.Size(150, 378);
             this.panel2.TabIndex = 0;
             // 
             // listBox1
@@ -506,7 +755,7 @@
             this.listBox1.FormattingEnabled = true;
             this.listBox1.Location = new System.Drawing.Point(3, 184);
             this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(144, 147);
+            this.listBox1.Size = new System.Drawing.Size(144, 186);
             this.listBox1.TabIndex = 17;
             // 
             // numericUpDown8
@@ -516,12 +765,34 @@
             this.numericUpDown8.Size = new System.Drawing.Size(57, 20);
             this.numericUpDown8.TabIndex = 16;
             // 
+            // button12
+            // 
+            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
+            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button12.Location = new System.Drawing.Point(3, 157);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(20, 20);
+            this.button12.TabIndex = 15;
+            this.button12.UseVisualStyleBackColor = true;
+            // 
             // numericUpDown7
             // 
             this.numericUpDown7.Location = new System.Drawing.Point(27, 157);
             this.numericUpDown7.Name = "numericUpDown7";
             this.numericUpDown7.Size = new System.Drawing.Size(57, 20);
             this.numericUpDown7.TabIndex = 14;
+            // 
+            // button11
+            // 
+            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
+            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Location = new System.Drawing.Point(3, 131);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(20, 20);
+            this.button11.TabIndex = 5;
+            this.button11.UseVisualStyleBackColor = true;
             // 
             // numericUpDown6
             // 
@@ -536,6 +807,54 @@
             this.numericUpDown5.Name = "numericUpDown5";
             this.numericUpDown5.Size = new System.Drawing.Size(118, 20);
             this.numericUpDown5.TabIndex = 12;
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Gray;
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button10.Location = new System.Drawing.Point(121, 101);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(26, 26);
+            this.button10.TabIndex = 11;
+            this.button10.UseVisualStyleBackColor = false;
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.Gray;
+            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(89, 101);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(26, 26);
+            this.button9.TabIndex = 10;
+            this.button9.UseVisualStyleBackColor = false;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Gray;
+            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button8.Location = new System.Drawing.Point(35, 99);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(26, 26);
+            this.button8.TabIndex = 9;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.Gray;
+            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button7.Location = new System.Drawing.Point(3, 99);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(26, 26);
+            this.button7.TabIndex = 8;
+            this.button7.UseVisualStyleBackColor = false;
             // 
             // numericUpDown4
             // 
@@ -613,7 +932,7 @@
             // 
             this.propertiesTabPage.Location = new System.Drawing.Point(4, 22);
             this.propertiesTabPage.Name = "propertiesTabPage";
-            this.propertiesTabPage.Size = new System.Drawing.Size(627, 389);
+            this.propertiesTabPage.Size = new System.Drawing.Size(627, 384);
             this.propertiesTabPage.TabIndex = 2;
             this.propertiesTabPage.Text = "Properties";
             this.propertiesTabPage.UseVisualStyleBackColor = true;
@@ -626,10 +945,76 @@
             this.scriptTabPage.Controls.Add(this.scriptTree);
             this.scriptTabPage.Location = new System.Drawing.Point(4, 22);
             this.scriptTabPage.Name = "scriptTabPage";
-            this.scriptTabPage.Size = new System.Drawing.Size(627, 389);
+            this.scriptTabPage.Size = new System.Drawing.Size(627, 384);
             this.scriptTabPage.TabIndex = 4;
             this.scriptTabPage.Text = "Script";
             this.scriptTabPage.UseVisualStyleBackColor = true;
+            // 
+            // toolStrip3
+            // 
+            this.toolStrip3.Location = new System.Drawing.Point(0, 0);
+            this.toolStrip3.Name = "toolStrip3";
+            this.toolStrip3.Size = new System.Drawing.Size(627, 25);
+            this.toolStrip3.TabIndex = 3;
+            this.toolStrip3.Text = "toolStrip3";
+            // 
+            // documentMap1
+            // 
+            this.documentMap1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.documentMap1.ForeColor = System.Drawing.Color.Maroon;
+            this.documentMap1.Location = new System.Drawing.Point(546, 28);
+            this.documentMap1.Name = "documentMap1";
+            this.documentMap1.Size = new System.Drawing.Size(81, 356);
+            this.documentMap1.TabIndex = 2;
+            this.documentMap1.Target = this.scriptBox;
+            this.documentMap1.Text = "documentMap1";
+            // 
+            // scriptBox
+            // 
+            this.scriptBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.scriptBox.AutoCompleteBracketsList = new char[] {
+        '(',
+        ')',
+        '{',
+        '}',
+        '[',
+        ']',
+        '\"',
+        '\"',
+        '\'',
+        '\''};
+            this.scriptBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\r\n";
+            this.scriptBox.AutoScrollMinSize = new System.Drawing.Size(2, 14);
+            this.scriptBox.BackBrush = null;
+            this.scriptBox.BackColor = System.Drawing.Color.Gray;
+            this.scriptBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
+            this.scriptBox.CaretColor = System.Drawing.Color.Gainsboro;
+            this.scriptBox.CharHeight = 14;
+            this.scriptBox.CharWidth = 8;
+            this.scriptBox.CommentPrefix = "--";
+            this.scriptBox.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.scriptBox.DisabledColor = System.Drawing.Color.Silver;
+            this.scriptBox.FoldingIndicatorColor = System.Drawing.Color.LightGreen;
+            this.scriptBox.Font = new System.Drawing.Font("Courier New", 9.75F);
+            this.scriptBox.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.scriptBox.IsReplaceMode = false;
+            this.scriptBox.Language = FastColoredTextBoxNS.Language.Lua;
+            this.scriptBox.LeftBracket = '(';
+            this.scriptBox.LeftBracket2 = '{';
+            this.scriptBox.Location = new System.Drawing.Point(152, 28);
+            this.scriptBox.Name = "scriptBox";
+            this.scriptBox.Paddings = new System.Windows.Forms.Padding(0);
+            this.scriptBox.RightBracket = ')';
+            this.scriptBox.RightBracket2 = '}';
+            this.scriptBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.scriptBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptBox.ServiceColors")));
+            this.scriptBox.Size = new System.Drawing.Size(388, 355);
+            this.scriptBox.TabIndex = 1;
+            this.scriptBox.TextAreaBorderColor = System.Drawing.Color.Silver;
+            this.scriptBox.Zoom = 100;
             // 
             // scriptTree
             // 
@@ -637,7 +1022,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.scriptTree.Location = new System.Drawing.Point(0, 28);
             this.scriptTree.Name = "scriptTree";
-            this.scriptTree.Size = new System.Drawing.Size(146, 361);
+            this.scriptTree.Size = new System.Drawing.Size(146, 356);
             this.scriptTree.TabIndex = 0;
             // 
             // toolTip1
@@ -701,71 +1086,6 @@
             this.toolStripSeparator5.Name = "toolStripSeparator5";
             this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // scriptBox
-            // 
-            this.scriptBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.scriptBox.AutoCompleteBracketsList = new char[] {
-        '(',
-        ')',
-        '{',
-        '}',
-        '[',
-        ']',
-        '\"',
-        '\"',
-        '\'',
-        '\''};
-            this.scriptBox.AutoIndentCharsPatterns = "\r\n^\\s*[\\w\\.]+(\\s\\w+)?\\s*(?<range>=)\\s*(?<range>.+)\r\n";
-            this.scriptBox.AutoScrollMinSize = new System.Drawing.Size(27, 14);
-            this.scriptBox.BackBrush = null;
-            this.scriptBox.BackColor = System.Drawing.Color.Gray;
-            this.scriptBox.BracketsHighlightStrategy = FastColoredTextBoxNS.BracketsHighlightStrategy.Strategy2;
-            this.scriptBox.CaretColor = System.Drawing.Color.Gainsboro;
-            this.scriptBox.CharHeight = 14;
-            this.scriptBox.CharWidth = 8;
-            this.scriptBox.CommentPrefix = "--";
-            this.scriptBox.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.scriptBox.DisabledColor = System.Drawing.Color.Silver;
-            this.scriptBox.FoldingIndicatorColor = System.Drawing.Color.LightGreen;
-            this.scriptBox.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.scriptBox.IsReplaceMode = false;
-            this.scriptBox.Language = FastColoredTextBoxNS.Language.Lua;
-            this.scriptBox.LeftBracket = '(';
-            this.scriptBox.LeftBracket2 = '{';
-            this.scriptBox.Location = new System.Drawing.Point(152, 28);
-            this.scriptBox.Name = "scriptBox";
-            this.scriptBox.Paddings = new System.Windows.Forms.Padding(0);
-            this.scriptBox.RightBracket = ')';
-            this.scriptBox.RightBracket2 = '}';
-            this.scriptBox.SelectionColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(0)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.scriptBox.ServiceColors = ((FastColoredTextBoxNS.ServiceColors)(resources.GetObject("scriptBox.ServiceColors")));
-            this.scriptBox.Size = new System.Drawing.Size(388, 360);
-            this.scriptBox.TabIndex = 1;
-            this.scriptBox.TextAreaBorderColor = System.Drawing.Color.Silver;
-            this.scriptBox.Zoom = 100;
-            // 
-            // documentMap1
-            // 
-            this.documentMap1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.documentMap1.ForeColor = System.Drawing.Color.Maroon;
-            this.documentMap1.Location = new System.Drawing.Point(546, 28);
-            this.documentMap1.Name = "documentMap1";
-            this.documentMap1.Size = new System.Drawing.Size(81, 361);
-            this.documentMap1.TabIndex = 2;
-            this.documentMap1.Target = this.scriptBox;
-            this.documentMap1.Text = "documentMap1";
-            // 
-            // toolStrip3
-            // 
-            this.toolStrip3.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip3.Name = "toolStrip3";
-            this.toolStrip3.Size = new System.Drawing.Size(627, 25);
-            this.toolStrip3.TabIndex = 3;
-            this.toolStrip3.Text = "toolStrip3";
-            // 
             // toolStripButton1
             // 
             this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
@@ -775,321 +1095,20 @@
             this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
             this.toolStripButton1.Text = "toolStripButton1";
             // 
-            // centerOffset
+            // objectSellect1
             // 
-            this.centerOffset.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("centerOffset.BackgroundImage")));
-            this.centerOffset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.centerOffset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.centerOffset.Location = new System.Drawing.Point(25, 24);
-            this.centerOffset.Name = "centerOffset";
-            this.centerOffset.Size = new System.Drawing.Size(18, 18);
-            this.centerOffset.TabIndex = 4;
-            this.centerOffset.UseVisualStyleBackColor = true;
-            // 
-            // offsetUp
-            // 
-            this.offsetUp.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetUp.BackgroundImage")));
-            this.offsetUp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetUp.Location = new System.Drawing.Point(25, 0);
-            this.offsetUp.Name = "offsetUp";
-            this.offsetUp.Size = new System.Drawing.Size(18, 18);
-            this.offsetUp.TabIndex = 0;
-            this.offsetUp.UseVisualStyleBackColor = true;
-            // 
-            // offsetRight
-            // 
-            this.offsetRight.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetRight.BackgroundImage")));
-            this.offsetRight.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.offsetRight.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetRight.Location = new System.Drawing.Point(49, 24);
-            this.offsetRight.Name = "offsetRight";
-            this.offsetRight.Size = new System.Drawing.Size(18, 18);
-            this.offsetRight.TabIndex = 3;
-            this.offsetRight.UseVisualStyleBackColor = true;
-            // 
-            // offsetDon
-            // 
-            this.offsetDon.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetDon.BackgroundImage")));
-            this.offsetDon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.offsetDon.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetDon.Location = new System.Drawing.Point(25, 48);
-            this.offsetDon.Name = "offsetDon";
-            this.offsetDon.Size = new System.Drawing.Size(18, 18);
-            this.offsetDon.TabIndex = 1;
-            this.offsetDon.UseVisualStyleBackColor = true;
-            // 
-            // offsetLeft
-            // 
-            this.offsetLeft.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("offsetLeft.BackgroundImage")));
-            this.offsetLeft.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.offsetLeft.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.offsetLeft.Location = new System.Drawing.Point(1, 24);
-            this.offsetLeft.Name = "offsetLeft";
-            this.offsetLeft.Size = new System.Drawing.Size(18, 18);
-            this.offsetLeft.TabIndex = 2;
-            this.offsetLeft.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(25, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(18, 18);
-            this.button2.TabIndex = 4;
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(25, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(18, 18);
-            this.button3.TabIndex = 0;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(49, 24);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(18, 18);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(25, 48);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(18, 18);
-            this.button5.TabIndex = 1;
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(1, 24);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(18, 18);
-            this.button6.TabIndex = 2;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // hidePanel1
-            // 
-            this.hidePanel1.BackColor = System.Drawing.Color.DarkGray;
-            this.hidePanel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("hidePanel1.BackgroundImage")));
-            this.hidePanel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.hidePanel1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.hidePanel1.Location = new System.Drawing.Point(447, 3);
-            this.hidePanel1.Name = "hidePanel1";
-            this.hidePanel1.Size = new System.Drawing.Size(18, 18);
-            this.hidePanel1.TabIndex = 0;
-            this.hidePanel1.UseVisualStyleBackColor = false;
-            // 
-            // button12
-            // 
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Location = new System.Drawing.Point(3, 157);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(20, 20);
-            this.button12.TabIndex = 15;
-            this.button12.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button11.Location = new System.Drawing.Point(3, 131);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(20, 20);
-            this.button11.TabIndex = 5;
-            this.button11.UseVisualStyleBackColor = true;
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Gray;
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Location = new System.Drawing.Point(121, 101);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(26, 26);
-            this.button10.TabIndex = 11;
-            this.button10.UseVisualStyleBackColor = false;
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.Gray;
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(89, 101);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(26, 26);
-            this.button9.TabIndex = 10;
-            this.button9.UseVisualStyleBackColor = false;
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Gray;
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(35, 99);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(26, 26);
-            this.button8.TabIndex = 9;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.Gray;
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(3, 99);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(26, 26);
-            this.button7.TabIndex = 8;
-            this.button7.UseVisualStyleBackColor = false;
-            // 
-            // sellectTool1
-            // 
-            this.sellectTool1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.sellectTool1.Image = ((System.Drawing.Image)(resources.GetObject("sellectTool1.Image")));
-            this.sellectTool1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.sellectTool1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.sellectTool1.Name = "sellectTool1";
-            this.sellectTool1.Size = new System.Drawing.Size(36, 36);
-            this.sellectTool1.Text = "toolStripButton1";
-            this.sellectTool1.ToolTipText = "Sellection tool";
-            this.sellectTool1.Click += new System.EventHandler(this.sellectTool1_Click);
-            // 
-            // editTool
-            // 
-            this.editTool.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.editTool.Image = ((System.Drawing.Image)(resources.GetObject("editTool.Image")));
-            this.editTool.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.editTool.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.editTool.Name = "editTool";
-            this.editTool.Size = new System.Drawing.Size(36, 36);
-            this.editTool.Text = "toolStripButton2";
-            this.editTool.ToolTipText = "Edit tool";
-            // 
-            // distanceTool1
-            // 
-            this.distanceTool1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.distanceTool1.Image = ((System.Drawing.Image)(resources.GetObject("distanceTool1.Image")));
-            this.distanceTool1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.distanceTool1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.distanceTool1.Name = "distanceTool1";
-            this.distanceTool1.Size = new System.Drawing.Size(36, 36);
-            this.distanceTool1.Text = "tok";
-            this.distanceTool1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
-            this.distanceTool1.ToolTipText = "Distance tool";
-            this.distanceTool1.Click += new System.EventHandler(this.distanceTool1_Click);
-            // 
-            // polygonTool1
-            // 
-            this.polygonTool1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.polygonTool1.Image = ((System.Drawing.Image)(resources.GetObject("polygonTool1.Image")));
-            this.polygonTool1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.polygonTool1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.polygonTool1.Name = "polygonTool1";
-            this.polygonTool1.Size = new System.Drawing.Size(36, 36);
-            this.polygonTool1.Text = "toolStripButton4";
-            this.polygonTool1.ToolTipText = "Polygon tool";
-            // 
-            // createObjBtn
-            // 
-            this.createObjBtn.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.createObjBtn.Image = global::physica.Properties.Resources.crea;
-            this.createObjBtn.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.createObjBtn.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.createObjBtn.Name = "createObjBtn";
-            this.createObjBtn.Size = new System.Drawing.Size(36, 36);
-            this.createObjBtn.ToolTipText = "Create object";
-            // 
-            // copySellection1
-            // 
-            this.copySellection1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.copySellection1.Image = ((System.Drawing.Image)(resources.GetObject("copySellection1.Image")));
-            this.copySellection1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.copySellection1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.copySellection1.Name = "copySellection1";
-            this.copySellection1.Size = new System.Drawing.Size(36, 36);
-            this.copySellection1.Text = "toolStripButton5";
-            this.copySellection1.ToolTipText = "Copy sellection";
-            // 
-            // pasteBtn1
-            // 
-            this.pasteBtn1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.pasteBtn1.Image = ((System.Drawing.Image)(resources.GetObject("pasteBtn1.Image")));
-            this.pasteBtn1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.pasteBtn1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.pasteBtn1.Name = "pasteBtn1";
-            this.pasteBtn1.Size = new System.Drawing.Size(36, 36);
-            this.pasteBtn1.Text = "toolStripButton6";
-            this.pasteBtn1.ToolTipText = "Paste from clipboard";
-            // 
-            // gridMultiplierPlus
-            // 
-            this.gridMultiplierPlus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.gridMultiplierPlus.Image = ((System.Drawing.Image)(resources.GetObject("gridMultiplierPlus.Image")));
-            this.gridMultiplierPlus.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.gridMultiplierPlus.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.gridMultiplierPlus.Name = "gridMultiplierPlus";
-            this.gridMultiplierPlus.Size = new System.Drawing.Size(36, 36);
-            this.gridMultiplierPlus.Text = "toolStripButton7";
-            this.gridMultiplierPlus.ToolTipText = "Grid multiplier +";
-            this.gridMultiplierPlus.Click += new System.EventHandler(this.gridMultiplierPlus_Click);
-            // 
-            // gridMultiplierMin
-            // 
-            this.gridMultiplierMin.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.gridMultiplierMin.Image = ((System.Drawing.Image)(resources.GetObject("gridMultiplierMin.Image")));
-            this.gridMultiplierMin.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.gridMultiplierMin.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.gridMultiplierMin.Name = "gridMultiplierMin";
-            this.gridMultiplierMin.Size = new System.Drawing.Size(36, 36);
-            this.gridMultiplierMin.ToolTipText = "Grid mltiplier -";
-            this.gridMultiplierMin.Click += new System.EventHandler(this.gridMultiplierMin_Click);
-            // 
-            // gridToggle1
-            // 
-            this.gridToggle1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.gridToggle1.Image = ((System.Drawing.Image)(resources.GetObject("gridToggle1.Image")));
-            this.gridToggle1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.gridToggle1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.gridToggle1.Name = "gridToggle1";
-            this.gridToggle1.Size = new System.Drawing.Size(36, 36);
-            this.gridToggle1.Text = "toolStripButton9";
-            this.gridToggle1.ToolTipText = "Grid toggle";
-            this.gridToggle1.Click += new System.EventHandler(this.gridToggle1_Click);
-            // 
-            // gridSnapToggle1
-            // 
-            this.gridSnapToggle1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.gridSnapToggle1.Image = ((System.Drawing.Image)(resources.GetObject("gridSnapToggle1.Image")));
-            this.gridSnapToggle1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
-            this.gridSnapToggle1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.gridSnapToggle1.Name = "gridSnapToggle1";
-            this.gridSnapToggle1.Size = new System.Drawing.Size(36, 36);
-            this.gridSnapToggle1.Text = "toolStripButton10";
-            this.gridSnapToggle1.ToolTipText = "Grid snap toggle";
-            this.gridSnapToggle1.Click += new System.EventHandler(this.gridSnapToggle1_Click);
+            this.objectSellect1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.objectSellect1.FormattingEnabled = true;
+            this.objectSellect1.Items.AddRange(new object[] {
+            "Physbox",
+            "StaticHitBox"});
+            this.objectSellect1.Location = new System.Drawing.Point(4, 4);
+            this.objectSellect1.Name = "objectSellect1";
+            this.objectSellect1.Size = new System.Drawing.Size(121, 21);
+            this.objectSellect1.Sorted = true;
+            this.objectSellect1.TabIndex = 6;
+            this.toolTip1.SetToolTip(this.objectSellect1, "Sellect object to create");
+            this.objectSellect1.Visible = false;
             // 
             // editorWindow
             // 
@@ -1135,9 +1154,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.scriptTabPage.ResumeLayout(false);
             this.scriptTabPage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.scriptBox)).EndInit();
             this.toolStrip2.ResumeLayout(false);
             this.toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.scriptBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1235,6 +1254,7 @@
         private FastColoredTextBoxNS.DocumentMap documentMap1;
         private System.Windows.Forms.ToolStrip toolStrip3;
         private System.Windows.Forms.ToolStripButton createObjBtn;
+        private System.Windows.Forms.ComboBox objectSellect1;
     }
 }
 
