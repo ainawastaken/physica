@@ -22,6 +22,11 @@ namespace physica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(true);
+            /*using (mgPreview.Game1 game = new mgPreview.Game1())
+            {
+                //game.Run();
+            }*/
+
             editorWindow w = new editorWindow();
             if (Environment.GetCommandLineArgs().Length >= 2 & Environment.GetCommandLineArgs()[1] == "-dev")
             {

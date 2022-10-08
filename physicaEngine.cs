@@ -8,7 +8,6 @@ using physica;
 using System.Windows.Forms;
 using System.Numerics;
 using System.Threading.Tasks;
-using MoonSharp;
 
 namespace physica.engine
 {
@@ -87,52 +86,47 @@ namespace physica.engine
                 "Polygon tool"
             };
 
-            public static void DrawTool(PaintEventArgs e, PointF mousePos, PointF mouseStart, bool mouseDown, int tool)
+            public static void DrawTool(Graphics e, PointF mousePos, PointF mouseStart, bool mouseDown, int tool)
             {
                 if (tool == SellectTool)
                 {
-                    e.Graphics.DrawString(names[tool], SystemFonts.DefaultFont, Brushes.Black, mousePos);
+                    e.DrawString(names[tool], SystemFonts.DefaultFont, Brushes.Black, mousePos);
 
                     if (mouseDown)
                     {
-                        SizeF size = new SizeF(0, 10);
-                        RectangleF rect = new RectangleF(mousePos, size);
-                        e.Graphics.DrawRectangle(Pens.Red, Rectangle.Round(rect));
+                        RectangleF rect = EMath.calculateRectangle(mouseStart, mousePos);
 
-                        size = new SizeF(Math.Abs(mousePos.X - mouseStart.X), Math.Abs(mousePos.Y - mouseStart.Y));
-                        rect = new RectangleF(mouseStart, size);
-                        e.Graphics.DrawRectangle(Pens.Black, Rectangle.Round(rect));
-
-                        e.Graphics.DrawString($"{rect.Width}", SystemFonts.DefaultFont, Brushes.Black, new PointF((rect.Size.Width/2)+rect.X, rect.Y));
-                        e.Graphics.DrawString($"{rect.Height}", SystemFonts.DefaultFont, Brushes.Black, new PointF(rect.X, (rect.Size.Height/2)+rect.Y));
-                        e.Graphics.DrawString($"Area:{rect.Width*rect.Height}", SystemFonts.DefaultFont, Brushes.Black, new PointF(rect.X, rect.Y-15));
+                        e.DrawRectangle(Pens.Black, Rectangle.Round(rect)); 
+                        e.DrawString($"{rect.Width}", SystemFonts.DefaultFont, Brushes.Black, new PointF((rect.Size.Width/2)+rect.X, rect.Y));
+                        e.DrawString($"{rect.Height}", SystemFonts.DefaultFont, Brushes.Black, new PointF(rect.X, (rect.Size.Height/2)+rect.Y));
+                        e.DrawString($"Area:{Math.Abs(rect.Width*rect.Height)}", SystemFonts.DefaultFont, Brushes.Black, new PointF(rect.X, rect.Y-15));
                     }
                 }
                 else if (tool == DistanceTool)
                 {
-                    e.Graphics.DrawString(names[tool], SystemFonts.DefaultFont, Brushes.Black, mousePos);
+                    e.DrawString(names[tool], SystemFonts.DefaultFont, Brushes.Black, mousePos);
 
                     if (mouseDown)
                     {
                         double distance = 0;
                         double angle = 0;
-                        e.Graphics.DrawLine(Pens.Red, mousePos, mouseStart);
+                        e.DrawLine(Pens.Red, mousePos, mouseStart);
 
                         SizeF size = new SizeF(0, -5);
                         SizeF size2 = new SizeF(0, 5);
-                        e.Graphics.DrawLine(Pens.Black, PointF.Subtract(mouseStart, size), PointF.Subtract(mouseStart, size2));
+                        e.DrawLine(Pens.Black, PointF.Subtract(mouseStart, size), PointF.Subtract(mouseStart, size2));
                         size = new SizeF(-5, 0);
                         size2 = new SizeF(5, 0);
-                        e.Graphics.DrawLine(Pens.Black, PointF.Subtract(mouseStart, size), PointF.Subtract(mouseStart, size2));
+                        e.DrawLine(Pens.Black, PointF.Subtract(mouseStart, size), PointF.Subtract(mouseStart, size2));
 
                         distance = Math.Round(EMath.DistanceBetweenPointFs(mousePos, mouseStart),1);
                         angle = Math.Round(EMath.AngleBetweenPointFs(mousePos, mouseStart), 1);
-                        e.Graphics.DrawString($"Distance:{distance}", SystemFonts.DefaultFont, Brushes.DarkRed, PointF.Empty);
-                        e.Graphics.DrawString($"Angle:{angle}", SystemFonts.DefaultFont, Brushes.DarkRed, new PointF(0,15));
+                        e.DrawString($"Distance:{distance}", SystemFonts.DefaultFont, Brushes.DarkRed, PointF.Empty);
+                        e.DrawString($"Angle:{angle}", SystemFonts.DefaultFont, Brushes.DarkRed, new PointF(0,15));
 
-                        e.Graphics.DrawString($"X:{mouseStart.X} Y:{mouseStart.Y}", SystemFonts.DefaultFont, Brushes.DarkRed,mouseStart);
+                        e.DrawString($"X:{mouseStart.X} Y:{mouseStart.Y}", SystemFonts.DefaultFont, Brushes.DarkRed,mouseStart);
                         size = new SizeF(0, -10);
-                        e.Graphics.DrawString($"X:{mousePos.X} Y:{mousePos.Y}", SystemFonts.DefaultFont, Brushes.DarkRed, PointF.Add(mousePos,size));
+                        e.DrawString($"X:{mousePos.X} Y:{mousePos.Y}", SystemFonts.DefaultFont, Brushes.DarkRed, PointF.Add(mousePos,size));
                     }
                 }
             }
@@ -260,12 +254,51 @@ namespace physica.engine
 
         public class EMath
         {
+            public static RectangleF calculateRectangle(PointF start, PointF to)
+            {
+                RectangleF rect = new RectangleF();
+                SizeF size = new SizeF();
+
+                if (to.X < start.X & to.Y < start.Y)
+                {
+                    size = new SizeF(start.X - to.X, start.Y - to.Y);
+                    rect = new RectangleF(to, size);
+                }
+                else if (to.X > start.X & to.Y > start.Y)
+                {
+                    size = new SizeF(to.X - start.X, to.Y - start.Y);
+                    rect = new RectangleF(start, size);
+                }
+                else if (to.X < start.X & to.Y > start.Y)
+                {
+                    size = new SizeF(start.X - to.X, to.Y - start.Y);
+                    rect = new RectangleF(new PointF(to.X, start.Y), size);
+                }
+                else if (to.X > start.X & to.Y < start.Y)
+                {
+                    size = new SizeF(to.X - start.X, start.Y - to.Y);
+                    rect = new RectangleF(new PointF(start.X, to.Y), size);
+                }
+
+                return rect;
+            }
+
             public static PointF midpoint(PointF a, PointF b)
             {
                 PointF ret = new PointF(0, 0);
                 ret.X = (a.X + b.X) / 2;
                 ret.Y = (a.Y + b.Y) / 2;
                 return ret;
+            }
+
+            public static int nearestMultiple(int value, int multiple)
+            {
+                int nearestMultiple =
+                        (int)Math.Round(
+                             (value / (double)multiple),
+                             MidpointRounding.AwayFromZero
+                         ) * multiple;
+                return nearestMultiple;
             }
 
             public static PointF RotatePointF(PointF PointFToRotate, PointF centerPointF, double angleInDegrees)

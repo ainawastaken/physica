@@ -21,6 +21,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 #pragma warning disable CS0169
+#pragma warning disable CS0414
+#pragma warning disable CS0649
+
 namespace physica.editor
 {
     public partial class editorWindow : Form
@@ -34,13 +37,20 @@ namespace physica.editor
         int sellectedTool = 0;
         bool mouseDown;
 
+        bool scriptViewButtonHeldLMB;
+        bool scriptViewButtonHeldRMB;
+        bool scriptViewButtonHeldMMB;
+        Point scriptViewMouseOffsetEarly;
+        Point scriptViewMouseOffsetLate;
+
         bool consIsShown = false;
 
         Point canvasOffset;
+        volatile Graphics canvasGraphics;
 
-        PointF[] gridPoints;
+        Point openGlpreviewWindMousePos; 
+        
         PointF closestPoint;
-
         int gridMul = 32;
         bool gridEnable = false;
         volatile bool gridSnapEnable = false;
@@ -52,59 +62,15 @@ namespace physica.editor
         {
             InitializeComponent();
         }
-
-        void ComputeThread()
-        {
-            while (true)
-            {
-                if (gridSnapEnable & mouseOnCanvas)
-                {
-                    CalculateClosestPoint(mouseLocation, gridMul, gridPoints,ref closestPoint);
-                    trueMouseLocation = closestPoint;
-                }
-                else
-                {
-                    trueMouseLocation = mouseLocation;
-                }
-            }
-        }
-
-        void CalculateGrid(ref PointF[] gridVar)
-        {
-            int i = 0;
-            for (int x = 0; x < canvas.Width + 1; x+=gridMul)
-            {
-                for (int y = 0; y < canvas.Height + 1; y+=gridMul)
-                {
-                    gridVar[i] = new PointF(x, y);
-                    i++;
-                }
-            }
-        }
-
-        void CalculateClosestPoint(PointF point, int gridMUl, PointF[] points, ref PointF outPoint)
-        {
-            PointF closestPoint = point;
-            var minDist = Single.MaxValue;
-            for (int i = 0; i < points.Length; ++i)
-            {
-                var dist = Vector2.Distance(new Vector2(points[i].X, points[i].Y), new Vector2(point.X, point.Y));
-                if (dist < minDist)
-                {
-                    minDist = dist;
-                    outPoint = points[i];
-                }
-            }
-        }
-
         private void Form1_Load(object sender, EventArgs e)
         {
-            gridPoints = new PointF[canvas.Width*canvas.Height];
             var property = typeof(Control).GetProperty("DoubleBuffered", BindingFlags.Instance | BindingFlags.NonPublic);
             property.SetValue(canvas, true, null);
-            CalculateGrid(ref gridPoints);
+            property.SetValue(scriptTree, true, null);
+            this.WindowState = FormWindowState.Maximized;
 
-            
+
+            scriptViewMouseOffsetLate = new Point(scriptTree.Width,0);
 
             Stopwatch sw = new Stopwatch();
             string progr = File.ReadAllText(@"Resources\gridFinder.cl");
@@ -118,8 +84,7 @@ namespace physica.editor
             Device device = devices[0]; //cl_device_id device;
             Context context = Cl.CreateContext(null, 1, devices, null, IntPtr.Zero, out err);
             CommandQueue cmdQueue = Cl.CreateCommandQueue(context, device, CommandQueueProperties.None, out err);
-            OpenCL.Net.Program program = Cl
-                .CreateProgramWithSource(context, 1, new[] { progr }, null, out err);
+            OpenCL.Net.Program program = Cl.CreateProgramWithSource(context, 1, new[] { progr }, null, out err);
             Cl.BuildProgram(program, 0, null, string.Empty, null, IntPtr.Zero);  //"-cl-mad-enable"
             if (Cl.GetProgramBuildInfo(program, device, ProgramBuildInfo.Status, out err).CastTo<BuildStatus>() != BuildStatus.Success)
             {
@@ -149,11 +114,7 @@ namespace physica.editor
             for (int i = 0; i < count; i++)correct += (results[i] == data[i] + data[i]) ? 1 : 0;
             sw.Stop();
             Program.c.print($"Computed {correct} of {count} correct values! In {sw.ElapsedMilliseconds} ms");
-
-            ct = new Thread(ComputeThread);
-            ct.Start();
         }
-
         private void editorWindow_Resize(object sender, EventArgs e)
         {
             entitiesBox.Height = (this.Height / 2) - menuStrip1.Height;
@@ -161,24 +122,22 @@ namespace physica.editor
             placedEntitiesBox.Height = (this.Height / 2) - menuStrip1.Height - 18;
             placedEntitiesBox.Location = new Point(0,(this.Height / 2) - menuStrip1.Height);
 
-            offsetPanel.Location = new Point(projectTabPage.Width-77, 3);
+            offsetPanel.Location = new Point(tabControl1.SelectedTab.Width-77, 3);
+            offsetPanel2.Location = new Point(tabControl1.SelectedTab.Width-230, 27);
 
-            offsetPanel2.Location = new Point(polyEditorTabPage.Width-230, 27);
-
-            hidePanel1.Location = new Point(polyEditorTabPage.Width, 3);
+            hidePanel1.Location = new Point(tabControl1.SelectedTab.Width-180, 3);
         }
-
         private void canvas_Paint(object sender, PaintEventArgs e)
         {
             if (gridEnable)
             {
                 for (int x = 0; x < canvas.Width; x += gridMul)
                 {
-                    e.Graphics.DrawLine(Pens.DarkGray, x, 0, x, canvas.Height);
-                }
-                for (int y = 0; y < canvas.Height; y += gridMul)
-                {
-                    e.Graphics.DrawLine(Pens.DarkGray, 0, y, canvas.Width, y);
+                    for (int y = 0; y < canvas.Height; y += gridMul)
+                    {
+                        e.Graphics.DrawLine(Pens.LightGray, new Point(x,0), new Point(x,canvas.Height));
+                        e.Graphics.DrawLine(Pens.LightGray, new Point(0, y), new Point(canvas.Width, y));
+                    }
                 }
             }
 
@@ -194,43 +153,48 @@ namespace physica.editor
                 }
                 
 
-                physicaEngine.Tools.DrawTool(e,trueMouseLocation,trueMouseStart,mouseDown,sellectedTool);
+                physicaEngine.Tools.DrawTool(e.Graphics,trueMouseLocation,trueMouseStart,mouseDown,sellectedTool);
             }
             
         }
-
         private void canvas_MouseEnter(object sender, EventArgs e)
         {
             mouseOnCanvas = true;
             Cursor.Hide();
         }
-
         private void canvas_MouseLeave(object sender, EventArgs e)
         {
             mouseOnCanvas = false;   
             Cursor.Show();
         }
-
         private void canvas_MouseMove(object sender, MouseEventArgs e)
         {
             mouseLocation = e.Location;
             canvas.Refresh();
             locationLabel.Text = $"Location: {trueMouseLocation.X},{trueMouseLocation.Y}";
-        }
 
+            if (gridSnapEnable)
+            {
+                trueMouseLocation = new Point(physicaEngine.EMath.nearestMultiple(e.X, gridMul), physicaEngine.EMath.nearestMultiple(e.Y, gridMul));
+            }
+        }
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
+                trueMouseStart = new Point(physicaEngine.EMath.nearestMultiple(e.X, gridMul), physicaEngine.EMath.nearestMultiple(e.Y, gridMul));
+
                 mouseDown = true;
             }
-            trueMouseStart = e.Location;
+            else
+            {
+                trueMouseStart = e.Location;
+            }
             if (gridSnapEnable)
             {
                 trueMouseStart = closestPoint;
             }
         }
-
         private void canvas_MouseUp(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
@@ -238,69 +202,99 @@ namespace physica.editor
                 mouseDown = false;
             }
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             canvas.Refresh();
         }
-
-        private void canvas_Click(object sender, EventArgs e)
-        {
-        }
-
-
-
+        private void canvas_Click(object sender, EventArgs e){}
         private void gridMultiplierPlus_Click(object sender, EventArgs e)
         {
             gridMul = gridMul*2;
             gridMulLabel.Text = $"Grid multiplier: {gridMul}";
-            CalculateGrid(ref gridPoints);
         }
-
         private void gridMultiplierMin_Click(object sender, EventArgs e)
         {
             gridMul = gridMul / 2;
             gridMulLabel.Text = $"Grid multiplier: {gridMul}";
-            CalculateGrid(ref gridPoints);
         }
-
         private void gridToggle1_Click(object sender, EventArgs e)
         {
             gridEnable = !gridEnable;
         }
-
         private void gridSnapToggle1_Click(object sender, EventArgs e)
         {
             gridSnapEnable = !gridSnapEnable;
         }
-
-        private void editorWindow_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            ct.Abort();
-        }
-
+        private void editorWindow_FormClosed(object sender, FormClosedEventArgs e){}
         private void distanceTool1_Click(object sender, EventArgs e)
         {
             sellectedTool = physicaEngine.Tools.DistanceTool;
         }
-
         private void sellectTool1_Click(object sender, EventArgs e)
         {
             sellectedTool = physicaEngine.Tools.SellectTool;
         }
-
         private void newProjBtn_Click(object sender, EventArgs e)
         {
             projWind.projWind pw = new projWind.projWind();
             pw.tabControl12.SelectTab(1);
             pw.ShowDialog();
         }
-
         private void openProjBtn_Click(object sender, EventArgs e)
         {
             projWind.projWind pw = new projWind.projWind();
             pw.tabControl12.SelectTab(0);
             pw.ShowDialog();
         }
+        private void scriptTree_MouseMove(object sender, MouseEventArgs e)
+        {
+            scriptTree.Refresh();
+            Size sz = new Size(19, scriptTree.Height);
+            Rectangle hitbox = new Rectangle(new Point(scriptTree.Width - sz.Width), sz);
+            Graphics g = scriptTree.CreateGraphics();
+            g.DrawRectangle(Pens.Black, hitbox);
+
+            scriptViewMouseOffsetEarly = e.Location;
+
+            if (hitbox.Contains(e.Location))
+            {
+                if (scriptViewButtonHeldLMB)
+                {
+                    hitbox.X = e.X - 7;
+                    scriptTree.Width = (int)physicaEngine.EMath.midpoint(new PointF(scriptViewMouseOffsetEarly.X, 0f), new PointF(scriptViewMouseOffsetLate.X, 0f)).X + 7;
+                    scriptViewMouseOffsetLate.X = (int)physicaEngine.EMath.midpoint(new PointF(scriptViewMouseOffsetEarly.X,0f), new PointF(scriptViewMouseOffsetLate.X, 0f)).X + 7;
+
+                    scriptBox.Location = new Point((int)physicaEngine.EMath.midpoint(new PointF(scriptViewMouseOffsetEarly.X, 0f), new PointF(scriptViewMouseOffsetLate.X, 0f)).X + 7);
+                    scriptBox.Width = documentMap1.Left;
+                }
+            }
+            else
+            {
+                scriptTree.Refresh();
+            }
+            if (!scriptViewButtonHeldLMB)
+            {
+
+            }
+
+            scriptBox.Text.Remove(scriptBox.Text.Length);
+        }
+        private void scriptTree_MouseDown(object sender, MouseEventArgs e)
+        {
+            scriptViewButtonHeldLMB = true;
+        }
+        private void scriptTree_MouseUp(object sender, MouseEventArgs e)
+        {
+            scriptViewButtonHeldLMB = false;
+        }
+
+        private void scriptTree_MouseLeave(object sender, EventArgs e)
+        {
+            scriptViewButtonHeldLMB = false;
+            scriptTree.Refresh();
+        }
     }
 }
+#pragma warning restore CS0169
+#pragma warning restore CS0414
+#pragma warning restore CS0649
