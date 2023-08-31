@@ -185,6 +185,14 @@ namespace physica.editor
                 trueMouseStart = new Point(physicaEngine.EMath.nearestMultiple(e.X, gridMul), physicaEngine.EMath.nearestMultiple(e.Y, gridMul));
 
                 mouseDown = true;
+                if (sellectedTool == physicaEngine.Tools.ObjectTool)
+                {
+                    objectSellect1.Location = e.Location;
+                    objectSellect1.Visible = true;
+                    objectSellect1.Select();
+                    objectSellect1.Focus();
+                    objectSellect1.DroppedDown = true;
+                }
             }
             else
             {
@@ -292,6 +300,10 @@ namespace physica.editor
         {
             scriptViewButtonHeldLMB = false;
             scriptTree.Refresh();
+
+        private void createObjBtn_Click(object sender, EventArgs e)
+        {
+            sellectedTool = physicaEngine.Tools.ObjectTool;
         }
     }
 }

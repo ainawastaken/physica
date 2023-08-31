@@ -19,6 +19,7 @@ namespace physica.engine
             public string path;
 
             public bool projectIsOpen;
+            public bool projectIsOpened;
 
             public List<string> ObjectPaths = new List<string>();
 
@@ -54,6 +55,8 @@ namespace physica.engine
                     lines.Add(obj.hitBox.ToString());
                     lines.Add(obj.location.ToString());
                     File.CreateText(Path.Combine(path, $@"Objects\{obj.name}@STHB.txt")).Dispose();
+                    File.CreateText(Path.Combine(path, $@"Objects\{obj.name}@STHB@SCRIPT.lua")).Dispose();
+                    File.WriteAllBytes(Path.Combine(path, $@"Objects\{obj.name}@STHB@SCRIPT.txt"), Properties.Resources.defaultScript_lua);
                     File.WriteAllLines(Path.Combine(path, $@"Objects\{obj.name}@STHB.txt"),lines.ToArray());
                     ObjectPaths.Add($@"Objects\{obj.name}@STHB.txt");
                     Program.c.print($"StaticHitBox created at {Path.Combine(path, $@"Objects\{obj.name}@STHB.txt")}");
@@ -78,12 +81,14 @@ namespace physica.engine
             public static int EditTool = 1;
             public static int DistanceTool = 2;
             public static int PolygonTool = 3;
+            public static int ObjectTool = 4;
             public static string[] names =
             {
                 "Sellect tool",
                 "Edit tool",
                 "Distance Tool",
-                "Polygon tool"
+                "Polygon tool",
+                "Object tool"
             };
 
             public static void DrawTool(Graphics e, PointF mousePos, PointF mouseStart, bool mouseDown, int tool)
@@ -128,6 +133,10 @@ namespace physica.engine
                         size = new SizeF(0, -10);
                         e.DrawString($"X:{mousePos.X} Y:{mousePos.Y}", SystemFonts.DefaultFont, Brushes.DarkRed, PointF.Add(mousePos,size));
                     }
+                }
+                else if (tool == ObjectTool)
+                {
+                    e.Graphics.DrawString(names[tool], SystemFonts.DefaultFont, Brushes.Black, mousePos);
                 }
             }
         }
