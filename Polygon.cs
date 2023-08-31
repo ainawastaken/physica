@@ -2,9 +2,10 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
+using physica.vec;
 
 
-namespace PolygonIntersection {
+namespace physica.poly{
 
 	public class Polygon {
 

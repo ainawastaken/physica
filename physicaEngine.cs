@@ -282,7 +282,6 @@ namespace physica.engine
 
                 return rect;
             }
-
             public static PointF midpoint(PointF a, PointF b)
             {
                 PointF ret = new PointF(0, 0);
@@ -290,7 +289,6 @@ namespace physica.engine
                 ret.Y = (a.Y + b.Y) / 2;
                 return ret;
             }
-
             public static int nearestMultiple(int value, int multiple)
             {
                 int nearestMultiple =
@@ -300,7 +298,6 @@ namespace physica.engine
                          ) * multiple;
                 return nearestMultiple;
             }
-
             public static PointF RotatePointF(PointF PointFToRotate, PointF centerPointF, double angleInDegrees)
             {
                 double angleInRadians = angleInDegrees * (Math.PI / 180);

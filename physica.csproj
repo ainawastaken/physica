@@ -257,6 +257,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Angle.cs" />
     <Compile Include="console.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -272,6 +273,7 @@
     <Compile Include="luaHandler.cs" />
     <Compile Include="mgPrev.cs" />
     <Compile Include="physics.cs" />
+    <Compile Include="physicsObject.cs" />
     <Compile Include="Polygon.cs" />
     <Compile Include="projWind.cs">
       <SubType>Form</SubType>
